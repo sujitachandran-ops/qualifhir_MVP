@@ -13,6 +13,10 @@ QualiFHIR is an AI-powered enhancement to our existing data processing pipeline 
 
 <img width="3848" height="9092" alt="image" src="https://github.com/user-attachments/assets/a934ad77-25f5-4dbe-934a-bbc35f716652" />
 
+---
+
+# Repo Structure
+
 ```text
 QualiFHIR_MVP/
 │
