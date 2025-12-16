@@ -1,2 +1,14 @@
-pandas
-numpy
+FAISS installation: 
+- pip install faiss-cpu
+
+PANDAS installation:
+- pip install pandas
+
+JSONLIB installation:
+- pip install jsonlib
+
+NUMPY installation:
+- pip install numpy
+
+SENTENCE-TRANSFORMERS installation
+- pip install sentence-transformers

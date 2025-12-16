@@ -1,0 +1,3 @@
+raw_data:
+  patients: "resources/fhir_raw/Patient.ndjson"
+  observations: "resources/fhir_raw/Observation.ndjson"

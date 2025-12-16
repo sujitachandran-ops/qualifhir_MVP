@@ -1,0 +1,10 @@
+references:
+  loinc: "resources/LoincTableCore.csv"
+  zipcodes: "resources/zip_code_database.csv"
+
+vector_store:
+  index_loinc_path: "vectorstore/index_loinc_path.faiss"
+
+outputs:
+  clean_patients: "outputs/cleaned_patients.csv"
+  clean_observations: "outputs/cleaned_pobservations.csv"
