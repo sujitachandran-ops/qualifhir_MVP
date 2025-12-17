@@ -60,6 +60,13 @@ def main():
 
         # TODO: implement logic to save cleaned data
 
+    # For testing purposes
+    print('Sample patient:')
+    print(patients[0])
+    print('***********************************')
+    print('Sample observation:')
+    print(observations[0])
+
 
 # ==========================================================================
 # Handler

@@ -36,6 +36,20 @@ In the context of QualiFHIR:
       the spelling differs.
     - The Vector Index is simply the file where you store all these numbers corresponding to your master
       catalog (LOINC).
+
+The output file (.faiss) is a binary file, not a text file. Don't save the words "Blood Glucose." Save numerical vectors
+(arrays of 32-bit floating-point numbers) compressed and optimized so your computer's RAM can read them at lightning speed.
+
+If we could decode it, what we would see are miles of lists of numbers.
+  - Vector 0: [0.015, -0.231, 0.884, ...] (Represents the first LOINC code)
+  - Vector 1: [0.552, 0.112, -0.003, ...] (Represents the second LOINC code)
+
+The .faiss file is just pure geometry. It doesn't know what those numbers mean; it only knows where they are located
+in mathematical space.
+
+Like the .faiss file, the .pkl file is not designed to be read by humans, but by the machine (Python).
+  - Plain Text (.csv): Saves the letter "A" as the letter "A".
+  - Pickle (.pkl): Serializes the information. Converts your Python dictionary into a byte stream.
 ---------------------------------------------------------------------------------------------------------------------
 WHAT IS FAISS?
 
