@@ -19,8 +19,13 @@ Execution Flow:
     - Serializes metadata (.pkl) to map results back to human-readable medical information (Code, Name, System).
 
 Outputs (Artifacts):
-- vectorstore/loinc_index.faiss
-- vectorstore/loinc_metadata.pkl
+- vectorstore/loinc_index.faiss:
+    It is a binary file, not a text file. ave numerical vectors (arrays of 32-bit
+    floating-point numbers) compressed and optimized so your computer's RAM can read
+    them at lightning speed.
+- vectorstore/loinc_metadata.pkl:
+    It is not designed to be read by humans, but by the machine (Python). It serializes
+    the information and converts the Python dictionary into a byte stream.
 """
 
 
