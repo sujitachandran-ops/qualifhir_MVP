@@ -25,18 +25,21 @@ Outputs (Artifacts):
 
 
 import pandas as pd
-import faiss
-from sentence_transformers import SentenceTransformer
-import yaml
 import numpy as np
+import faiss
+import yaml
 import os
+from pathlib import Path
 import pickle
+from sentence_transformers import SentenceTransformer
 
 # ==========================================================================
 # Global variables
 # ==========================================================================
 config = {}
-yaml_configs = 'resources/config/paths.yaml'
+
+project_root = Path(__file__).resolve().parent.parent.parent
+yaml_configs = project_root / 'resources/config/paths.yaml'
 
 
 # ==========================================================================
@@ -50,6 +53,7 @@ def load_config():
         with open(yaml_configs, 'r', encoding='utf-8') as file:
             config = yaml.safe_load(file)
             print(f'Configuration succcessfull')
+            print(project_root)
     except FileNotFoundError:
         print(f'Error: YAML file was not found {yaml_configs}')
 
@@ -61,7 +65,7 @@ def build_loinc_index():
     print('--- STARTING VECTOR ENGINE BUILD FOR LOINC CODES ---')
     
     # Load the LOINC master catalog
-    loinc_path = config['references']['loinc']
+    loinc_path = project_root / config['references']['loinc']
     print(f'Reading master catalog from: {loinc_path}')
     
     # Assume CSV has standard LOINC columns. All data is treated as strings to avoid type issues.
@@ -90,12 +94,12 @@ def build_loinc_index():
     print(f'Index built with {index.ntotal} vectors.')
 
     # Save Artifacts
-    output_dir = os.path.dirname(config['vector_store']['index_loinc_path'])
+    output_dir = os.path.dirname(project_root / config['vector_store']['index_loinc_path'])
     os.makedirs(output_dir, exist_ok=True)
     
-    # Save the mathematical index (FAISS)
-    faiss_path = config['vector_store']['index_loinc_path']
-    faiss.write_index(index, faiss_path)
+    # Save the mathematical index (FAISS file)
+    faiss_path = project_root / config['vector_store']['index_loinc_path']
+    faiss.write_index(index, str(faiss_path))
     print(f'Index for LOINC codes saved to: {faiss_path}')
     
     # Save metadata (ID -> Real Code Mapping). Essential to map Vector ID to human-readable LOINC Code
