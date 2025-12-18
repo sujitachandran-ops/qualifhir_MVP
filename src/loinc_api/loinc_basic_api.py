@@ -1,7 +1,7 @@
 import json
 import requests
 
-url = "https://loinc.regenstrief.org/searchapi/loincs?query=tumor&rows=100&offset=100&sortorder=loinc_num"
+url = "https://loinc.regenstrief.org/searchapi/loincs?query=glucose&rows=500&sortorder=loinc_num"
 username = ""
 password = ""
 

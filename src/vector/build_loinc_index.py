@@ -75,6 +75,8 @@ def build_loinc_index():
     
     # Assume CSV has standard LOINC columns. All data is treated as strings to avoid type issues.
     df = pd.read_csv(loinc_path, dtype=str).fillna('')
+
+    # pass API call here to get updated loinc data and merge with df if needed
     
     # Create a list of text documents to vectorize.
     # Concatenating common name with the code provides better context for the model.
