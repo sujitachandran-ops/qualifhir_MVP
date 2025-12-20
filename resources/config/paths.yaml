@@ -8,3 +8,4 @@ vector_store:
 outputs:
   clean_patients: "outputs/cleaned_patients.csv"
   clean_observations: "outputs/cleaned_pobservations.csv"
+  loinc_output: "output.json"

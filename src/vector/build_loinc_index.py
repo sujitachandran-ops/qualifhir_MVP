@@ -34,6 +34,7 @@ import numpy as np
 import faiss
 import yaml
 import os
+import json
 from pathlib import Path
 import pickle
 from sentence_transformers import SentenceTransformer
@@ -70,14 +71,28 @@ def build_loinc_index():
     print('--- STARTING VECTOR ENGINE BUILD FOR LOINC CODES ---')
     
     # Load the LOINC master catalog
-    loinc_path = project_root / config['references']['loinc']
+    loinc_path = project_root / config['outputs']['loinc_output']
     print(f'Reading master catalog from: {loinc_path}')
-    
-    # Assume CSV has standard LOINC columns. All data is treated as strings to avoid type issues.
-    df = pd.read_csv(loinc_path, dtype=str).fillna('')
 
-    # pass API call here to get updated loinc data and merge with df if needed
-    
+    try:
+        with open(loinc_path, 'r', encoding='utf-8') as f:
+            raw_data = json.load(f)
+            
+        # Aquí es donde ocurre la magia: accedemos solo a la lista interna
+        if "Results" in raw_data:
+            loincs = raw_data["Results"]
+        else:
+            print("Error: Results were not foun in JSON file.")
+            return
+
+        # Convertimos esa lista específica a DataFrame
+        df = pd.DataFrame(loincs)
+
+    except Exception as e:
+        print(f"Error while reading loinc file: {e}")
+        return
+
+
     # Create a list of text documents to vectorize.
     # Concatenating common name with the code provides better context for the model.
     documents = (df['LONG_COMMON_NAME'] + ' (' + df['LOINC_NUM'] + ')').tolist()
