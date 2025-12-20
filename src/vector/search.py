@@ -129,7 +129,7 @@ def search_loinc(query_text: str, top_k: int = 5) -> list:
 
     Returns:
         list[dict]: A list of dictionaries representing the found LOINC codes.
-                    Each dict contains: 'score', 'loinc_num', 'display', etc.
+                    Each dict contains: 'score', 'loinc_num', 'long_common_name', etc.
     """
     # Ensure all resources are loaded
     load_resources()
@@ -162,7 +162,7 @@ def search_loinc(query_text: str, top_k: int = 5) -> list:
         result_entry = {
             'score': float(score), # Lower L2 distance = Better match
             'loinc_num': record.get('LOINC_NUM', 'N/A'),
-            'display_name': record.get('LONG_COMMON_NAME') or record.get('DisplayName', 'N/A'),
+            'long_common_name': record.get('LONG_COMMON_NAME'),
             'system': record.get('SYSTEM', 'N/A'),
             'component': record.get('COMPONENT', 'N/A')
         }
@@ -188,7 +188,7 @@ if __name__ == "__main__":
             print("-" * 40)
             print(f"Score : {m['score']:.4f}")
             print(f"Code  : {m['loinc_num']}")
-            print(f"Name  : {m['display_name']}")
+            print(f"Name  : {m['long_common_name']}")
             print(f"System: {m['system']}")
             
     except Exception as e:
