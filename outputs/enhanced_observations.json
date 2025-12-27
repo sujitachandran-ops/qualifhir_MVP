@@ -1,0 +1,830 @@
+[
+  {
+    "observation_id": "b710c876-322c-581f-91a5-d8acb674c4e6",
+    "original_loinc_code": "8302-2",
+    "original_display": "Body Height",
+    "value": 48.6,
+    "unit": "cm",
+    "ucum_code": "cm",
+    "effective_datetime": "2020-06-08T05:47:56+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "b710c876-322c-581f-91a5-d8acb674c4e6",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8302-2",
+            "display": "Body Height"
+          }
+        ],
+        "text": "Body Height"
+      },
+      "subject": {
+        "reference": "Patient/b710c876-322c-581f-5b66-042c86a70e73"
+      },
+      "encounter": {
+        "reference": "Encounter/b710c876-322c-581f-61ba-e0616792ef91"
+      },
+      "effectiveDateTime": "2020-06-08T05:47:56+05:30",
+      "issued": "2020-06-08T05:47:56.343+05:30",
+      "valueQuantity": {
+        "value": 48.6,
+        "unit": "cm",
+        "system": "http://unitsofmeasure.org",
+        "code": "cm"
+      }
+    },
+    "recommended_loinc": "12618-5",
+    "confidence_score": 0.539,
+    "loinc_candidates": [
+      {
+        "score": 1.31546950340271,
+        "loinc_num": "12618-5",
+        "long_common_name": "Glucose [Mass/volume] in Serum or Plasma --4th specimen post XXX challenge",
+        "system": "Ser/Plas",
+        "component": "Glucose^4th specimen post XXX challenge"
+      },
+      {
+        "score": 1.318018913269043,
+        "loinc_num": "12619-3",
+        "long_common_name": "Glucose [Mass/volume] in Serum or Plasma --5th specimen post XXX challenge",
+        "system": "Ser/Plas",
+        "component": "Glucose^5th specimen post XXX challenge"
+      },
+      {
+        "score": 1.326460838317871,
+        "loinc_num": "12626-8",
+        "long_common_name": "Glucose [Mass/volume] in Serum or Plasma --14th specimen post XXX challenge",
+        "system": "Ser/Plas",
+        "component": "Glucose^14th specimen post XXX challenge"
+      }
+    ],
+    "llm_explanation": "12618-5 - Glucose [Mass/volume] in Serum or Plasma --4th specimen post 12619-3 - Glucose [Mass/volume] in Serum or Plasma --5th specimen post 12626-8 - Glucose [Mass/volume] in Serum or Plasma --14th specimen pos"
+  },
+  {
+    "observation_id": "b710c876-322c-581f-b7aa-e5d100a741f8",
+    "original_loinc_code": "72514-3",
+    "original_display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported",
+    "value": 0,
+    "unit": "{score}",
+    "ucum_code": "{score}",
+    "effective_datetime": "2020-06-08T05:47:56+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "b710c876-322c-581f-b7aa-e5d100a741f8",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "72514-3",
+            "display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+          }
+        ],
+        "text": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+      },
+      "subject": {
+        "reference": "Patient/b710c876-322c-581f-5b66-042c86a70e73"
+      },
+      "encounter": {
+        "reference": "Encounter/b710c876-322c-581f-61ba-e0616792ef91"
+      },
+      "effectiveDateTime": "2020-06-08T05:47:56+05:30",
+      "issued": "2020-06-08T05:47:56.343+05:30",
+      "valueQuantity": {
+        "value": 0,
+        "unit": "{score}",
+        "system": "http://unitsofmeasure.org",
+        "code": "{score}"
+      }
+    },
+    "recommended_loinc": "104637-4",
+    "confidence_score": 0.447,
+    "loinc_candidates": [
+      {
+        "score": 1.4288305044174194,
+        "loinc_num": "104637-4",
+        "long_common_name": "Percentage of time continuous glucose monitor device worn Reporting Period Calculated",
+        "system": "^Patient",
+        "component": "Percentage of time continuous glucose monitor device worn"
+      },
+      {
+        "score": 1.4386703968048096,
+        "loinc_num": "101977-7",
+        "long_common_name": "Cortisol, glucose and somatotropin post glucagon stimulation panel - Serum or Plasma",
+        "system": "Ser/Plas",
+        "component": "Cortisol, glucose and somatotropin post glucagon stimulation panel"
+      },
+      {
+        "score": 1.4424867630004883,
+        "loinc_num": "101132-9",
+        "long_common_name": "Glucose post XXX challenge panel - Serum or Plasma",
+        "system": "Ser/Plas",
+        "component": "Glucose post XXX challenge panel"
+      }
+    ],
+    "llm_explanation": "104637-4 - Percentage of time continuous glucose monitor device worn Re 101977-7 - Cortisol, glucose and somatotropin post glucagon stimulation 101132-9 - Glucose post XXX challenge panel - Serum or Plasma"
+  },
+  {
+    "observation_id": "b710c876-322c-581f-7f4a-bed8f4091817",
+    "original_loinc_code": "29463-7",
+    "original_display": "Body Weight",
+    "value": 3.6,
+    "unit": "kg",
+    "ucum_code": "kg",
+    "effective_datetime": "2020-06-08T05:47:56+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "b710c876-322c-581f-7f4a-bed8f4091817",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "29463-7",
+            "display": "Body Weight"
+          }
+        ],
+        "text": "Body Weight"
+      },
+      "subject": {
+        "reference": "Patient/b710c876-322c-581f-5b66-042c86a70e73"
+      },
+      "encounter": {
+        "reference": "Encounter/b710c876-322c-581f-61ba-e0616792ef91"
+      },
+      "effectiveDateTime": "2020-06-08T05:47:56+05:30",
+      "issued": "2020-06-08T05:47:56.343+05:30",
+      "valueQuantity": {
+        "value": 3.6,
+        "unit": "kg",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg"
+      }
+    },
+    "recommended_loinc": "1534-7",
+    "confidence_score": 0.558,
+    "loinc_candidates": [
+      {
+        "score": 1.1597005128860474,
+        "loinc_num": "1534-7",
+        "long_common_name": "Glucose [Mass/volume] in Serum or Plasma --3 minutes post 0.5 g/kg glucose IV",
+        "system": "Ser/Plas",
+        "component": "Glucose^3M post 0.5 g/kg glucose IV"
+      },
+      {
+        "score": 1.1946041584014893,
+        "loinc_num": "1499-3",
+        "long_common_name": "Glucose [Mass/volume] in Serum or Plasma --1 hour post 0.5 g/kg glucose IV",
+        "system": "Ser/Plas",
+        "component": "Glucose^1H post 0.5 g/kg glucose IV"
+      },
+      {
+        "score": 1.1973960399627686,
+        "loinc_num": "16915-1",
+        "long_common_name": "Glucose [Mass/volume] in Serum or Plasma --post meal",
+        "system": "Ser/Plas",
+        "component": "Glucose^post meal"
+      }
+    ],
+    "llm_explanation": "1534-7 - Glucose [Mass/volume] in Serum or Plasma --3 minutes post 0. 1499-3 - Glucose [Mass/volume] in Serum or Plasma --1 hour post 0.5 g 16915-1 - Glucose [Mass/volume] in Serum or Plasma --post meal"
+  },
+  {
+    "observation_id": "b710c876-322c-581f-e8ef-3cafc893d92f",
+    "original_loinc_code": "77606-2",
+    "original_display": "Weight-for-length Per age and sex",
+    "value": 82.634,
+    "unit": "%",
+    "ucum_code": "%",
+    "effective_datetime": "2020-06-08T05:47:56+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "b710c876-322c-581f-e8ef-3cafc893d92f",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/pediatric-weight-for-height"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "77606-2",
+            "display": "Weight-for-length Per age and sex"
+          }
+        ],
+        "text": "Weight-for-length Per age and sex"
+      },
+      "subject": {
+        "reference": "Patient/b710c876-322c-581f-5b66-042c86a70e73"
+      },
+      "encounter": {
+        "reference": "Encounter/b710c876-322c-581f-61ba-e0616792ef91"
+      },
+      "effectiveDateTime": "2020-06-08T05:47:56+05:30",
+      "issued": "2020-06-08T05:47:56.343+05:30",
+      "valueQuantity": {
+        "value": 82.634,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+      }
+    },
+    "recommended_loinc": "104637-4",
+    "confidence_score": 0.53,
+    "loinc_candidates": [
+      {
+        "score": 1.4020222425460815,
+        "loinc_num": "104637-4",
+        "long_common_name": "Percentage of time continuous glucose monitor device worn Reporting Period Calculated",
+        "system": "^Patient",
+        "component": "Percentage of time continuous glucose monitor device worn"
+      },
+      {
+        "score": 1.4135034084320068,
+        "loinc_num": "27353-2",
+        "long_common_name": "Glucose mean value [Mass/volume] in Blood Estimated from glycated hemoglobin",
+        "system": "Bld",
+        "component": "Estimated average glucose"
+      },
+      {
+        "score": 1.429537296295166,
+        "loinc_num": "21310-8",
+        "long_common_name": "Glucose [Mass/volume] in Serum or Plasma --75 minutes post XXX challenge",
+        "system": "Ser/Plas",
+        "component": "Glucose^75M post XXX challenge"
+      }
+    ],
+    "llm_explanation": "LOINC codes are: 104637-4 - Percentage of time continuous glucose monitor device worn Re 27353-2 - Glucose mean value [Mass/volume] in Blood Estimated from gly 21310-8 - Glucose [Mass/volume] in Serum or Plasma --75 minutes post X"
+  },
+  {
+    "observation_id": "b710c876-322c-581f-5138-47ed94433138",
+    "original_loinc_code": "8289-1",
+    "original_display": "Head Occipital-frontal circumference Percentile",
+    "value": 11.71,
+    "unit": "%",
+    "ucum_code": "%",
+    "effective_datetime": "2020-06-08T05:47:56+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "b710c876-322c-581f-5138-47ed94433138",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/head-occipital-frontal-circumference-percentile"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8289-1",
+            "display": "Head Occipital-frontal circumference Percentile"
+          }
+        ],
+        "text": "Head Occipital-frontal circumference Percentile"
+      },
+      "subject": {
+        "reference": "Patient/b710c876-322c-581f-5b66-042c86a70e73"
+      },
+      "encounter": {
+        "reference": "Encounter/b710c876-322c-581f-61ba-e0616792ef91"
+      },
+      "effectiveDateTime": "2020-06-08T05:47:56+05:30",
+      "issued": "2020-06-08T05:47:56.343+05:30",
+      "valueQuantity": {
+        "value": 11.71,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+      }
+    },
+    "recommended_loinc": "2342-4",
+    "confidence_score": 0.508,
+    "loinc_candidates": [
+      {
+        "score": 1.6353175640106201,
+        "loinc_num": "2342-4",
+        "long_common_name": "Glucose [Mass/volume] in Cerebral spinal fluid",
+        "system": "CSF",
+        "component": "Glucose"
+      },
+      {
+        "score": 1.6498973369598389,
+        "loinc_num": "101977-7",
+        "long_common_name": "Cortisol, glucose and somatotropin post glucagon stimulation panel - Serum or Plasma",
+        "system": "Ser/Plas",
+        "component": "Cortisol, glucose and somatotropin post glucagon stimulation panel"
+      },
+      {
+        "score": 1.666183590888977,
+        "loinc_num": "30362-8",
+        "long_common_name": "Insulin [Units/volume] in Serum or Plasma --30 minutes post 75 g glucose PO",
+        "system": "Ser/Plas",
+        "component": "Insulin^30M post 75 g glucose PO"
+      }
+    ],
+    "llm_explanation": "Glucose [Mass/volume] in Cerebral spinal fluid 101977-7 - Cortisol, glucose and somatotropin post glucagon stimulation 30362-8 - Insulin [Units/volume] in Serum or Plasma --30 minutes post"
+  },
+  {
+    "observation_id": "b710c876-322c-581f-b4b8-683cf42ad1a2",
+    "original_loinc_code": "9843-4",
+    "original_display": "Head Occipital-frontal circumference",
+    "value": 32.89,
+    "unit": "cm",
+    "ucum_code": "cm",
+    "effective_datetime": "2020-06-08T05:47:56+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "b710c876-322c-581f-b4b8-683cf42ad1a2",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-head-circumference"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "9843-4",
+            "display": "Head Occipital-frontal circumference"
+          }
+        ],
+        "text": "Head Occipital-frontal circumference"
+      },
+      "subject": {
+        "reference": "Patient/b710c876-322c-581f-5b66-042c86a70e73"
+      },
+      "encounter": {
+        "reference": "Encounter/b710c876-322c-581f-61ba-e0616792ef91"
+      },
+      "effectiveDateTime": "2020-06-08T05:47:56+05:30",
+      "issued": "2020-06-08T05:47:56.343+05:30",
+      "valueQuantity": {
+        "value": 32.89,
+        "unit": "cm",
+        "system": "http://unitsofmeasure.org",
+        "code": "cm"
+      }
+    },
+    "recommended_loinc": "2342-4",
+    "confidence_score": 0.507,
+    "loinc_candidates": [
+      {
+        "score": 1.638546347618103,
+        "loinc_num": "2342-4",
+        "long_common_name": "Glucose [Mass/volume] in Cerebral spinal fluid",
+        "system": "CSF",
+        "component": "Glucose"
+      },
+      {
+        "score": 1.6417677402496338,
+        "loinc_num": "1572-7",
+        "long_common_name": "Insulin [Mass/volume] in Serum or Plasma --pre 75 g glucose PO",
+        "system": "Ser/Plas",
+        "component": "Insulin^pre 75 g glucose PO"
+      },
+      {
+        "score": 1.6861801147460938,
+        "loinc_num": "101977-7",
+        "long_common_name": "Cortisol, glucose and somatotropin post glucagon stimulation panel - Serum or Plasma",
+        "system": "Ser/Plas",
+        "component": "Cortisol, glucose and somatotropin post glucagon stimulation panel"
+      }
+    ],
+    "llm_explanation": "Glucose [Mass/volume] in Cerebral spinal fluid 1572-7 - Insulin [Mass/volume] in Serum or Plasma --pre 75 g glucose 101977-7 - Cortisol, glucose and somatotropin post glucagon stimulation"
+  },
+  {
+    "observation_id": "b710c876-322c-581f-8146-93dbf73e2f1b",
+    "original_loinc_code": "85354-9",
+    "original_display": "Blood pressure panel with all children optional",
+    "value": null,
+    "unit": null,
+    "ucum_code": null,
+    "effective_datetime": "2020-06-08T05:47:56+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "b710c876-322c-581f-8146-93dbf73e2f1b",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "85354-9",
+            "display": "Blood pressure panel with all children optional"
+          }
+        ],
+        "text": "Blood pressure panel with all children optional"
+      },
+      "subject": {
+        "reference": "Patient/b710c876-322c-581f-5b66-042c86a70e73"
+      },
+      "encounter": {
+        "reference": "Encounter/b710c876-322c-581f-61ba-e0616792ef91"
+      },
+      "effectiveDateTime": "2020-06-08T05:47:56+05:30",
+      "issued": "2020-06-08T05:47:56.343+05:30",
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "8462-4",
+                "display": "Diastolic Blood Pressure"
+              }
+            ],
+            "text": "Diastolic Blood Pressure"
+          },
+          "valueQuantity": {
+            "value": 78,
+            "unit": "mm[Hg]",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "8480-6",
+                "display": "Systolic Blood Pressure"
+              }
+            ],
+            "text": "Systolic Blood Pressure"
+          },
+          "valueQuantity": {
+            "value": 101,
+            "unit": "mm[Hg]",
+            "system": "http://unitsofmeasure.org",
+            "code": "mm[Hg]"
+          }
+        }
+      ]
+    },
+    "recommended_loinc": "104873-5",
+    "confidence_score": 0.388,
+    "loinc_candidates": [
+      {
+        "score": 1.4227440357208252,
+        "loinc_num": "104873-5",
+        "long_common_name": "Glucose dumping syndrome panel - Serum, Plasma or Blood",
+        "system": "Ser/Plas/Bld",
+        "component": "Glucose dumping syndrome panel"
+      },
+      {
+        "score": 1.432112216949463,
+        "loinc_num": "24353-5",
+        "long_common_name": "Glucose tolerance 2 hours gestational panel - Urine and Serum or Plasma",
+        "system": "Urine+Ser/Plas",
+        "component": "Glucose tolerance 2H gestational panel"
+      },
+      {
+        "score": 1.4347392320632935,
+        "loinc_num": "101308-5",
+        "long_common_name": "Glucose post arginine stimulation panel - Serum or Plasma",
+        "system": "Ser/Plas",
+        "component": "Glucose post arginine stimulation panel"
+      }
+    ],
+    "llm_explanation": "104873-5 - Glucose dumping syndrome panel - Serum, Plasma or Blood 24353-5 - Glucose tolerance 2 hours gestational panel - Urine and Seru 101308-5 - Glucose post arginine stimulation panel - Serum or Plasma"
+  },
+  {
+    "observation_id": "b710c876-322c-581f-c286-04a1ba27712f",
+    "original_loinc_code": "8867-4",
+    "original_display": "Heart rate",
+    "value": 63,
+    "unit": "/min",
+    "ucum_code": "/min",
+    "effective_datetime": "2020-06-08T05:47:56+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "b710c876-322c-581f-c286-04a1ba27712f",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-heart-rate"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8867-4",
+            "display": "Heart rate"
+          }
+        ],
+        "text": "Heart rate"
+      },
+      "subject": {
+        "reference": "Patient/b710c876-322c-581f-5b66-042c86a70e73"
+      },
+      "encounter": {
+        "reference": "Encounter/b710c876-322c-581f-61ba-e0616792ef91"
+      },
+      "effectiveDateTime": "2020-06-08T05:47:56+05:30",
+      "issued": "2020-06-08T05:47:56.343+05:30",
+      "valueQuantity": {
+        "value": 63,
+        "unit": "/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    "recommended_loinc": "104636-6",
+    "confidence_score": 0.559,
+    "loinc_candidates": [
+      {
+        "score": 1.1506917476654053,
+        "loinc_num": "104636-6",
+        "long_common_name": "Days continuous glucose monitor device worn [#] Reporting Period Estimated",
+        "system": "^Patient",
+        "component": "Days continuous glucose monitor device worn"
+      },
+      {
+        "score": 1.1657352447509766,
+        "loinc_num": "104637-4",
+        "long_common_name": "Percentage of time continuous glucose monitor device worn Reporting Period Calculated",
+        "system": "^Patient",
+        "component": "Percentage of time continuous glucose monitor device worn"
+      },
+      {
+        "score": 1.2269080877304077,
+        "loinc_num": "106793-3",
+        "long_common_name": "Continuous glucose monitoring time in ranges panel",
+        "system": "^Patient",
+        "component": "Continuous glucose monitoring time in ranges panel"
+      }
+    ],
+    "llm_explanation": "LOINC codes are: 104636-6 - Days continuous glucose monitor device worn [#] Reporting Pe 104637-4 - Percentage of time continuous glucose monitor device worn Re 106793-3 - Continuous glucose monitoring time in ranges panel Task: Select the best LOINC code and explain briefly."
+  },
+  {
+    "observation_id": "b710c876-322c-581f-35ea-088d3447adb4",
+    "original_loinc_code": "9279-1",
+    "original_display": "Respiratory rate",
+    "value": 14,
+    "unit": "/min",
+    "ucum_code": "/min",
+    "effective_datetime": "2020-06-08T05:47:56+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "b710c876-322c-581f-35ea-088d3447adb4",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "9279-1",
+            "display": "Respiratory rate"
+          }
+        ],
+        "text": "Respiratory rate"
+      },
+      "subject": {
+        "reference": "Patient/b710c876-322c-581f-5b66-042c86a70e73"
+      },
+      "encounter": {
+        "reference": "Encounter/b710c876-322c-581f-61ba-e0616792ef91"
+      },
+      "effectiveDateTime": "2020-06-08T05:47:56+05:30",
+      "issued": "2020-06-08T05:47:56.343+05:30",
+      "valueQuantity": {
+        "value": 14,
+        "unit": "/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    "recommended_loinc": "16993-8",
+    "confidence_score": 0.554,
+    "loinc_candidates": [
+      {
+        "score": 1.1929123401641846,
+        "loinc_num": "16993-8",
+        "long_common_name": "Hydrogen/Expired gas [Volume Fraction] in Exhaled gas --5.5 hours post dose glucose",
+        "system": "Exhl gas",
+        "component": "Hydrogen/Expired gas^5.5H post dose glucose"
+      },
+      {
+        "score": 1.1978387832641602,
+        "loinc_num": "16992-0",
+        "long_common_name": "Hydrogen/Expired gas [Volume Fraction] in Exhaled gas --4 hours post dose glucose",
+        "system": "Exhl gas",
+        "component": "Hydrogen/Expired gas^4H post dose glucose"
+      },
+      {
+        "score": 1.2003244161605835,
+        "loinc_num": "16994-6",
+        "long_common_name": "Hydrogen/Expired gas [Volume Fraction] in Exhaled gas --5 hours post dose glucose",
+        "system": "Exhl gas",
+        "component": "Hydrogen/Expired gas^5H post dose glucose"
+      }
+    ],
+    "llm_explanation": "16993-8 - Hydrogen/Expired gas [Volume Fraction] in Exhaled gas --5.5 16992-0 - Hydrogen/Expired gas [Volume Fraction] in Exhaled gas --4 ho 16994-6 - Hydrogen/Expired gas [Volume Fraction] in Exhaled gas --5 ho"
+  },
+  {
+    "observation_id": "b710c876-322c-581f-dcee-5ed9218566a9",
+    "original_loinc_code": "6690-2",
+    "original_display": "Leukocytes [#/volume] in Blood by Automated count",
+    "value": 7.1768,
+    "unit": "10*3/uL",
+    "ucum_code": "10*3/uL",
+    "effective_datetime": "2020-06-08T05:47:56+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "b710c876-322c-581f-dcee-5ed9218566a9",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab",
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory",
+              "display": "Laboratory"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "6690-2",
+            "display": "Leukocytes [#/volume] in Blood by Automated count"
+          }
+        ],
+        "text": "Leukocytes [#/volume] in Blood by Automated count"
+      },
+      "subject": {
+        "reference": "Patient/b710c876-322c-581f-5b66-042c86a70e73"
+      },
+      "encounter": {
+        "reference": "Encounter/b710c876-322c-581f-61ba-e0616792ef91"
+      },
+      "effectiveDateTime": "2020-06-08T05:47:56+05:30",
+      "issued": "2020-06-08T05:47:56.343+05:30",
+      "valueQuantity": {
+        "value": 7.1768,
+        "unit": "10*3/uL",
+        "system": "http://unitsofmeasure.org",
+        "code": "10*3/uL"
+      }
+    },
+    "recommended_loinc": "2360-6",
+    "confidence_score": 0.579,
+    "loinc_candidates": [
+      {
+        "score": 1.0046093463897705,
+        "loinc_num": "2360-6",
+        "long_common_name": "Glucose-6-Phosphate dehydrogenase [Enzymatic activity/volume] in Leukocytes",
+        "system": "WBC",
+        "component": "Glucose-6-Phosphate dehydrogenase"
+      },
+      {
+        "score": 1.0532952547073364,
+        "loinc_num": "104880-0",
+        "long_common_name": "Hematocrit [Volume Fraction] of Blood --3 hours post dose glucose",
+        "system": "Bld",
+        "component": "Hematocrit^3H post dose glucose"
+      },
+      {
+        "score": 1.0539045333862305,
+        "loinc_num": "104876-8",
+        "long_common_name": "Hematocrit [Volume Fraction] of Blood --1 hour post dose glucose",
+        "system": "Bld",
+        "component": "Hematocrit^1H post dose glucose"
+      }
+    ],
+    "llm_explanation": "2360-6 - Glucose-6-Phosphate dehydrogenase [Enzymatic activity/volume 104880-0 - Hematocrit [Volume Fraction] of Blood --3 hours post dose gl 104876-8 - Hematocrit [Volume Fraction] of Blood --1 hour post dose glu"
+  }
+]

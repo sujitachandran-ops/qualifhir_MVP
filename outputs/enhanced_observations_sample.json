@@ -1,0 +1,572 @@
+[
+  {
+    "observation_id": "223a8712-6553-5913-dc6c-63e742fbcbd6",
+    "original_loinc_code": "XXXX-INVALID",
+    "original_display": "Blood sugar level",
+    "value": 1.7978,
+    "unit": "mg/dL",
+    "ucum_code": "mg/dL",
+    "effective_datetime": "2022-07-03T07:43:20+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "223a8712-6553-5913-dc6c-63e742fbcbd6",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab",
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory",
+              "display": "Laboratory"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "XXXX-INVALID",
+            "display": "Blood sugar level"
+          }
+        ],
+        "text": "Glucose [Mass/volume] in Urine by Test strip"
+      },
+      "subject": {
+        "reference": "Patient/223a8712-6553-5913-e3ed-8e47fb83b8bc"
+      },
+      "encounter": {
+        "reference": "Encounter/223a8712-6553-5913-bc44-345a57a8a337"
+      },
+      "effectiveDateTime": "2022-07-03T07:43:20+05:30",
+      "issued": "2022-07-03T07:43:20.309+05:30",
+      "valueQuantity": {
+        "value": 1.7978,
+        "unit": "mg/dL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg/dL"
+      }
+    },
+    "recommended_loinc": "18296-4",
+    "confidence_score": 0.636,
+    "enhancement_required": true,
+    "loinc_candidates": [
+      {
+        "score": 0.6837196350097656,
+        "loinc_num": "18296-4",
+        "long_common_name": "Glucose [Interpretation] in Serum or Plasma--post dose glucose",
+        "system": "Ser/Plas",
+        "component": "Glucose^post dose glucose"
+      },
+      {
+        "score": 0.7263550162315369,
+        "loinc_num": "110939-6",
+        "long_common_name": "Glucose [Measurement] in Blood",
+        "system": "Bld",
+        "component": "Glucose"
+      },
+      {
+        "score": 0.7354832887649536,
+        "loinc_num": "27353-2",
+        "long_common_name": "Glucose mean value [Mass/volume] in Blood Estimated from glycated hemoglobin",
+        "system": "Bld",
+        "component": "Estimated average glucose"
+      }
+    ],
+    "llm_explanation": "LOINC codes are: 18296-4 - Glucose [Interpretation] in Serum or Plasma--post dose gluco 110939-6 - Glucose [Measurement] in Blood 27353-2 - Glucose mean value [Mass/volume] in Blood Estimated from gly Task: Test: Blood sugar level Value: 1.7978 mg/dL Candidate LOINC codes: 18296-4 - Glucose [Interpretation] in Serum or Plasma--post dose gluco 110939-6 - Glucose [Measurement] in Blood 27353-2 - Glucose mean value [Mass/volume] in Blood Estimated from gly Task: Select the best LOINC code and explain briefly."
+  },
+  {
+    "observation_id": "0005f0a6-732f-437f-242c-071eab3c0ed4",
+    "original_loinc_code": "XXXX-INVALID",
+    "original_display": "Blood sugar level",
+    "value": 74.8,
+    "unit": "mg/dL",
+    "ucum_code": "mg/dL",
+    "effective_datetime": "2015-09-20T22:38:59+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "0005f0a6-732f-437f-242c-071eab3c0ed4",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab",
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory",
+              "display": "Laboratory"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "XXXX-INVALID",
+            "display": "Blood sugar level"
+          }
+        ],
+        "text": "Glucose [Mass/volume] in Blood"
+      },
+      "subject": {
+        "reference": "Patient/0005f0a6-732f-437f-3839-7b840932ce64"
+      },
+      "encounter": {
+        "reference": "Encounter/0005f0a6-732f-437f-689c-c0154d55033f"
+      },
+      "effectiveDateTime": "2015-09-20T22:38:59+05:30",
+      "issued": "2015-09-20T22:38:59.025+05:30",
+      "valueQuantity": {
+        "value": 74.8,
+        "unit": "mg/dL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg/dL"
+      }
+    },
+    "recommended_loinc": "18296-4",
+    "confidence_score": 0.626,
+    "enhancement_required": true,
+    "loinc_candidates": [
+      {
+        "score": 0.7331415414810181,
+        "loinc_num": "18296-4",
+        "long_common_name": "Glucose [Interpretation] in Serum or Plasma--post dose glucose",
+        "system": "Ser/Plas",
+        "component": "Glucose^post dose glucose"
+      },
+      {
+        "score": 0.7791190147399902,
+        "loinc_num": "27353-2",
+        "long_common_name": "Glucose mean value [Mass/volume] in Blood Estimated from glycated hemoglobin",
+        "system": "Bld",
+        "component": "Estimated average glucose"
+      },
+      {
+        "score": 0.8105871081352234,
+        "loinc_num": "1548-7",
+        "long_common_name": "Glucose [Mass/volume] in Serum or Plasma --pre 0.5 g/kg glucose IV",
+        "system": "Ser/Plas",
+        "component": "Glucose^pre 0.5 g/kg glucose IV"
+      }
+    ],
+    "llm_explanation": "Glucose [Interpretation] in Serum or Plasma--post dose gluco 27353-2 - Glucose mean value [Mass/volume] in Blood Estimated from gly 1548-7 - Glucose [Mass/volume] in Serum or Plasma --pre 0.5 g/kg gluc"
+  },
+  {
+    "observation_id": "9668b854-2d7f-e0a4-352f-388d2f74aa7e",
+    "original_loinc_code": "XXXX-INVALID",
+    "original_display": "Blood sugar level",
+    "value": 1.7499,
+    "unit": "mg/dL",
+    "ucum_code": "mg/dL",
+    "effective_datetime": "2022-09-20T08:41:47+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "9668b854-2d7f-e0a4-352f-388d2f74aa7e",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab",
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory",
+              "display": "Laboratory"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "XXXX-INVALID",
+            "display": "Blood sugar level"
+          }
+        ],
+        "text": "Glucose [Mass/volume] in Urine by Test strip"
+      },
+      "subject": {
+        "reference": "Patient/9668b854-2d7f-e0a4-b4b3-6b7ae7881282"
+      },
+      "encounter": {
+        "reference": "Encounter/9668b854-2d7f-e0a4-a759-1290d79dffb6"
+      },
+      "effectiveDateTime": "2022-09-20T08:41:47+05:30",
+      "issued": "2022-09-20T08:41:47.408+05:30",
+      "valueQuantity": {
+        "value": 1.7499,
+        "unit": "mg/dL",
+        "system": "http://unitsofmeasure.org",
+        "code": "mg/dL"
+      }
+    },
+    "recommended_loinc": "18296-4",
+    "confidence_score": 0.638,
+    "enhancement_required": true,
+    "loinc_candidates": [
+      {
+        "score": 0.6770307421684265,
+        "loinc_num": "18296-4",
+        "long_common_name": "Glucose [Interpretation] in Serum or Plasma--post dose glucose",
+        "system": "Ser/Plas",
+        "component": "Glucose^post dose glucose"
+      },
+      {
+        "score": 0.7187821865081787,
+        "loinc_num": "27353-2",
+        "long_common_name": "Glucose mean value [Mass/volume] in Blood Estimated from glycated hemoglobin",
+        "system": "Bld",
+        "component": "Estimated average glucose"
+      },
+      {
+        "score": 0.7266024351119995,
+        "loinc_num": "110939-6",
+        "long_common_name": "Glucose [Measurement] in Blood",
+        "system": "Bld",
+        "component": "Glucose"
+      }
+    ],
+    "llm_explanation": "LOINC codes are: 18296-4 - Glucose [Interpretation] in Serum or Plasma--post dose gluco 27353-2 - Glucose mean value [Mass/volume] in Blood Estimated from gly 110939-6 - Glucose [Measurement] in Blood Task: Select the best LOINC code and explain briefly."
+  },
+  {
+    "observation_id": "51a87bf1-a528-0773-ef18-ae5b51b4dde3",
+    "original_loinc_code": "74006-8",
+    "original_display": "Weight difference [Mass difference] --pre dialysis - post dialysis",
+    "value": 1.8311,
+    "unit": "kg",
+    "ucum_code": "kg",
+    "effective_datetime": "2025-01-20T10:46:24+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "51a87bf1-a528-0773-ef18-ae5b51b4dde3",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "74006-8",
+            "display": "Weight difference [Mass difference] --pre dialysis - post dialysis"
+          }
+        ],
+        "text": "Weight difference [Mass difference] --pre dialysis - post dialysis"
+      },
+      "subject": {
+        "reference": "Patient/51a87bf1-a528-0773-2444-d2fe73c3000a"
+      },
+      "encounter": {
+        "reference": "Encounter/51a87bf1-a528-0773-5b51-6fb5a309bd5d"
+      },
+      "effectiveDateTime": "2025-01-20T10:46:24+05:30",
+      "issued": "2025-01-20T10:46:24.309+05:30",
+      "valueQuantity": {
+        "value": 1.8311,
+        "unit": "kg",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg"
+      }
+    },
+    "recommended_loinc": "74006-8",
+    "confidence_score": 1.0,
+    "enhancement_required": false,
+    "loinc_candidates": [],
+    "llm_explanation": "Original LOINC code and unit are valid. No enhancement required."
+  },
+  {
+    "observation_id": "d7c8fe42-6df6-0227-a931-ad3a9272f341",
+    "original_loinc_code": "29463-7",
+    "original_display": "Body Weight",
+    "value": 91.8,
+    "unit": "kg",
+    "ucum_code": "kg",
+    "effective_datetime": "2018-06-30T02:33:35+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "d7c8fe42-6df6-0227-a931-ad3a9272f341",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "29463-7",
+            "display": "Body Weight"
+          }
+        ],
+        "text": "Body Weight"
+      },
+      "subject": {
+        "reference": "Patient/d7c8fe42-6df6-0227-c1b1-b4a128f8cbb4"
+      },
+      "encounter": {
+        "reference": "Encounter/d7c8fe42-6df6-0227-7ed5-855f568e7470"
+      },
+      "effectiveDateTime": "2018-06-30T02:33:35+05:30",
+      "issued": "2018-06-30T02:33:35.517+05:30",
+      "valueQuantity": {
+        "value": 91.8,
+        "unit": "kg",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg"
+      }
+    },
+    "recommended_loinc": "29463-7",
+    "confidence_score": 1.0,
+    "enhancement_required": false,
+    "loinc_candidates": [],
+    "llm_explanation": "Original LOINC code and unit are valid. No enhancement required."
+  },
+  {
+    "observation_id": "44f56c3c-31c1-61b6-aae6-ea25250ec4af",
+    "original_loinc_code": "29463-7",
+    "original_display": "Body Weight",
+    "value": 26.9,
+    "unit": "kg",
+    "ucum_code": "kg",
+    "effective_datetime": "2018-12-04T03:04:23+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "44f56c3c-31c1-61b6-aae6-ea25250ec4af",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "29463-7",
+            "display": "Body Weight"
+          }
+        ],
+        "text": "Body Weight"
+      },
+      "subject": {
+        "reference": "Patient/44f56c3c-31c1-61b6-be0f-788b125cefe3"
+      },
+      "encounter": {
+        "reference": "Encounter/44f56c3c-31c1-61b6-574d-b5b82913f81e"
+      },
+      "effectiveDateTime": "2018-12-04T03:04:23+05:30",
+      "issued": "2018-12-04T03:04:23.301+05:30",
+      "valueQuantity": {
+        "value": 26.9,
+        "unit": "kg",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg"
+      }
+    },
+    "recommended_loinc": "29463-7",
+    "confidence_score": 1.0,
+    "enhancement_required": false,
+    "loinc_candidates": [],
+    "llm_explanation": "Original LOINC code and unit are valid. No enhancement required."
+  },
+  {
+    "observation_id": "895019b2-702b-5ef8-f2d0-492c55e464c0",
+    "original_loinc_code": "72514-3",
+    "original_display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported",
+    "value": 2,
+    "unit": "{score}",
+    "ucum_code": "{score}",
+    "effective_datetime": "2020-01-07T16:12:48+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "895019b2-702b-5ef8-f2d0-492c55e464c0",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "72514-3",
+            "display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+          }
+        ],
+        "text": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+      },
+      "subject": {
+        "reference": "Patient/895019b2-702b-5ef8-8a64-341cf2d73cae"
+      },
+      "encounter": {
+        "reference": "Encounter/895019b2-702b-5ef8-1b61-c7dd9de8e272"
+      },
+      "effectiveDateTime": "2020-01-07T16:12:48+05:30",
+      "issued": "2020-01-07T16:12:48.016+05:30",
+      "valueQuantity": {
+        "value": 2,
+        "unit": "{score}",
+        "system": "http://unitsofmeasure.org",
+        "code": "{score}"
+      }
+    },
+    "recommended_loinc": "104637-4",
+    "confidence_score": 0.447,
+    "enhancement_required": true,
+    "loinc_candidates": [
+      {
+        "score": 1.4247403144836426,
+        "loinc_num": "104637-4",
+        "long_common_name": "Percentage of time continuous glucose monitor device worn Reporting Period Calculated",
+        "system": "^Patient",
+        "component": "Percentage of time continuous glucose monitor device worn"
+      },
+      {
+        "score": 1.4369230270385742,
+        "loinc_num": "101132-9",
+        "long_common_name": "Glucose post XXX challenge panel - Serum or Plasma",
+        "system": "Ser/Plas",
+        "component": "Glucose post XXX challenge panel"
+      },
+      {
+        "score": 1.444246768951416,
+        "loinc_num": "101977-7",
+        "long_common_name": "Cortisol, glucose and somatotropin post glucagon stimulation panel - Serum or Plasma",
+        "system": "Ser/Plas",
+        "component": "Cortisol, glucose and somatotropin post glucagon stimulation panel"
+      }
+    ],
+    "llm_explanation": "104637-4 - Percentage of time continuous glucose monitor device worn Re 101132-9 - Glucose post XXX challenge panel - Serum or Plasma 101977-7 - Cortisol, glucose and somatotropin post glucagon stimulation"
+  },
+  {
+    "observation_id": "aebf407e-36ac-33e4-2f14-10c2d1e12916",
+    "original_loinc_code": "72514-3",
+    "original_display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported",
+    "value": 2,
+    "unit": "{score}",
+    "ucum_code": "{score}",
+    "effective_datetime": "2016-03-26T18:42:39+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "aebf407e-36ac-33e4-2f14-10c2d1e12916",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "72514-3",
+            "display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+          }
+        ],
+        "text": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+      },
+      "subject": {
+        "reference": "Patient/aebf407e-36ac-33e4-255b-f119569c59c2"
+      },
+      "encounter": {
+        "reference": "Encounter/aebf407e-36ac-33e4-503f-3b2dbe344250"
+      },
+      "effectiveDateTime": "2016-03-26T18:42:39+05:30",
+      "issued": "2016-03-26T18:42:39.389+05:30",
+      "valueQuantity": {
+        "value": 2,
+        "unit": "{score}",
+        "system": "http://unitsofmeasure.org",
+        "code": "{score}"
+      }
+    },
+    "recommended_loinc": "104637-4",
+    "confidence_score": 0.447,
+    "enhancement_required": true,
+    "loinc_candidates": [
+      {
+        "score": 1.4247403144836426,
+        "loinc_num": "104637-4",
+        "long_common_name": "Percentage of time continuous glucose monitor device worn Reporting Period Calculated",
+        "system": "^Patient",
+        "component": "Percentage of time continuous glucose monitor device worn"
+      },
+      {
+        "score": 1.4369230270385742,
+        "loinc_num": "101132-9",
+        "long_common_name": "Glucose post XXX challenge panel - Serum or Plasma",
+        "system": "Ser/Plas",
+        "component": "Glucose post XXX challenge panel"
+      },
+      {
+        "score": 1.444246768951416,
+        "loinc_num": "101977-7",
+        "long_common_name": "Cortisol, glucose and somatotropin post glucagon stimulation panel - Serum or Plasma",
+        "system": "Ser/Plas",
+        "component": "Cortisol, glucose and somatotropin post glucagon stimulation panel"
+      }
+    ],
+    "llm_explanation": "104637-4 - Percentage of time continuous glucose monitor device worn Re 101132-9 - Glucose post XXX challenge panel - Serum or Plasma 101977-7 - Cortisol, glucose and somatotropin post glucagon stimulation"
+  }
+]

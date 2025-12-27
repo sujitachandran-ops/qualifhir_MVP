@@ -1,6 +1,18 @@
-faiss-cpu
+# Core utilities
+requests
+pyyaml
+
+# Data handling
 pandas
 numpy
+
+# Vector search
+faiss-cpu
+
+# Embeddings
 sentence-transformers
-tf-keras
-openai
+
+# Open-source LLM
+transformers
+torch
+accelerate

@@ -1,75 +1,25 @@
-"""
-Pipeline Runner
-----------------
-This script is responsible for orchestrating the execution of the pipeline,
-loading configurations and executing the transformations.
-"""
-
-
 import yaml
-import os
-import pandas as pd
 from src.etl.clean_patient import parse_patient
 from src.etl.clean_observation import parse_observation
+from src.vector.search import search_loinc
+from src.llm.open_source_llm import generate_answer
 
-
-# ==========================================================================
-# Global variables
-# ==========================================================================
-config = {}
-yaml_configs = "pipeline_config.yaml"
-
-
-# ==========================================================================
-# Functions
-# ==========================================================================
-def get_configuration():
-    global config
-
-    # Get run_pipeline.py path
-    current_folder = os.path.dirname(os.path.abspath(__file__))
-    
-    # Create YAML file path
-    yaml_path = os.path.join(current_folder, yaml_configs)
-
-    # Open and load YAML configs
-    try:
-        with open(yaml_path, 'r', encoding='utf-8') as file:
-            config = yaml.safe_load(file)
-            print(f"Configuration succcessfull")
-    except FileNotFoundError:
-        print(f"Error: YAML file was not found {yaml_path}")
-    
 def main():
-    # Load YAML configurations
-    get_configuration()
+    with open("resources/config/paths.yaml") as f:
+        config = yaml.safe_load(f)
 
-    # Get clean patients
-    patients = parse_patient(config['raw_data']['patients'])
-    if len(patients) > 0:
-        # Create dataset to be saved
-        df_patients = pd.DataFrame(patients)
+    patients = parse_patient(config["raw_data"]["patients"])
+    observations = parse_observation(config["raw_data"]["observations"])
 
-        # TODO: implement logic to save cleaned data
+    print(f"Patients loaded: {len(patients)}")
+    print(f"Observations loaded: {len(observations)}")
 
-    # Get clean observations
-    observations = parse_observation(config['raw_data']['observations'])
-    if len(observations) > 0:
-        # Create dataset to be saved
-        df_observations = pd.DataFrame(observations)
+    query = "fasting blood glucose"
+    loinc_matches = search_loinc(query, top_k=5)
 
-        # TODO: implement logic to save cleaned data
+    response = generate_answer(query, loinc_matches)
+    print("\n=== FINAL RAG OUTPUT ===\n")
+    print(response)
 
-    # For testing purposes
-    print('Sample patient:')
-    print(patients[0])
-    print('***********************************')
-    print('Sample observation:')
-    print(observations[0])
-
-
-# ==========================================================================
-# Handler
-# ==========================================================================
 if __name__ == "__main__":
     main()

@@ -1,50 +1,28 @@
 import json
+from typing import List, Dict
 
 def parse_observation(file_path):
-    extracted = []
+    records = []
 
     with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
-            line = line.strip()
-            if not line:
-                continue
+            obs = json.loads(line)
 
-            try:
-                obs = json.loads(line)
-            except json.JSONDecodeError:
-                continue  # skip bad lines
-
-            # ensure this is an Observation resource
             if obs.get("resourceType") != "Observation":
                 continue
 
-            # extract core fields safely
-            coding = (
-                obs.get("code", {})
-                   .get("coding", [{}])[0]
-            )
+            coding = obs.get("code", {}).get("coding", [{}])[0]
+            value = obs.get("valueQuantity", {})
 
-            value_quantity = obs.get("valueQuantity", {})
+            records.append({
+                "observation_id": obs.get("id"),
+                "original_loinc_code": coding.get("code"),
+                "original_display": coding.get("display"),
+                "value": value.get("value"),
+                "unit": value.get("unit"),
+                "ucum_code": value.get("code"),
+                "effective_datetime": obs.get("effectiveDateTime"),
+                "raw_observation": obs  # full traceability
+            })
 
-            record = {
-                "id": obs.get("id"),
-                "loinc_code": coding.get("code"),
-                "loinc_display": coding.get("display"),
-                "value": value_quantity.get("value"),
-                "unit": value_quantity.get("unit"),
-                "effectiveDateTime": obs.get("effectiveDateTime"),
-                "patient_id": obs.get("subject", {}).get("reference", "").replace("Patient/", ""),
-                "encounter_id": obs.get("encounter", {}).get("reference", "").replace("Encounter/", "")
-            }
-
-            extracted.append(record)
-
-    return extracted
-
-
-if __name__ == "__main__":
-    path = "resources/fhir_raw/Observation.ndjson"
-    data = parse_observation(path)
-    print("Total observations extracted:", len(data))
-    #print(data[:5])  # preview first 5
-    print(json.dumps(data[:5], indent=4))
+    return records

@@ -1,11 +1,10 @@
-references:
-  loinc: "resources/LoincTableCore.csv"
-  zipcodes: "resources/zip_code_database.csv"
+raw_data:
+  patients: resources/fhir_raw/Patient.ndjson
+  observations: resources/fhir_raw/Observation.ndjson
+
+loinc:
+  catalog: resources/loinc/loinc_output.json
 
 vector_store:
-  index_loinc_path: "vectorstore/index_loinc_path.faiss"
-
-outputs:
-  clean_patients: "outputs/cleaned_patients.csv"
-  clean_observations: "outputs/cleaned_pobservations.csv"
-  loinc_output: "output.json"
+  index_path: vectorstore/index_loinc_path.faiss
+  metadata_path: vectorstore/loinc_metadata.pkl
