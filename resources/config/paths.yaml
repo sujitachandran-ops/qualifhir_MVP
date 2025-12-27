@@ -1,0 +1,10 @@
+raw_data:
+  patients: resources/fhir_raw/Patient.ndjson
+  observations: resources/fhir_raw/Observation.ndjson
+
+loinc:
+  catalog: resources/loinc/loinc_output.json
+
+vector_store:
+  index_path: vectorstore/index_loinc_path.faiss
+  metadata_path: vectorstore/loinc_metadata.pkl

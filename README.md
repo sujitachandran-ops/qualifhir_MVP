@@ -1,98 +1,282 @@
-# qualifhir_MVP
-QualiFHIR is an AI-powered enhancement to our existing data processing pipeline that intelligently analyzes, validates, and standardizes clinical data — including identifying and correcting missing or inaccurate clinical data before they are consumed & distributed to downstream applications. This ensures high-quality, interoperable, and reliable data for all downstream applications / consumers.
-- Uses LLMs + context-aware algorithms to detect and fix errors
-- Automatically corrects wrong/missing clinical data
-- Understands semantic meaning of each instance (Observation – Lab data, Procedure – CPT codes, etc) to infer the right mapping
-- Provides explainable corrections with a confidence score for every adjustment
-- Ensures all data entering the ecosystem is accurate, interoperable, and FHIR-compliant
-- Converts raw, fragmented inputs into clean, trustworthy, analytics-ready data for downstream apps
+# QualiFHIR_MVP
+
+**QualiFHIR** is an AI-powered data quality and standardization layer for healthcare data pipelines.  
+It intelligently analyzes, validates, and enhances clinical data (FHIR resources) before they are consumed by downstream systems.
+
+QualiFHIR combines **rule-based validation**, **semantic vector search**, and **LLM reasoning** to ensure clinical data is:
+
+- Accurate  
+- Interoperable  
+- Explainable  
+- FHIR-compliant  
+- Analytics-ready  
 
 ---
 
-# Detailed Workflow
+## 🚀 What Problems Does QualiFHIR Solve?
 
-<img width="3848" height="9092" alt="image" src="https://github.com/user-attachments/assets/a934ad77-25f5-4dbe-934a-bbc35f716652" />
+Healthcare data often suffers from:
+
+- Missing or incorrect clinical codes (LOINC, CPT, etc.)
+- Non-standard units (e.g. `{score}`)
+- Free-text or ambiguous observations
+- Inconsistent demographic / postal data
+- Low explainability when automated corrections are applied
+
+**QualiFHIR fixes these problems safely and transparently.**
 
 ---
 
-# Repo Structure
+## ✨ Key Capabilities
+
+- 🔍 Detects missing, invalid, or inconsistent clinical data  
+- 🧠 Uses semantic understanding (vector search + LLMs) instead of brittle string matching  
+- 🧪 Applies rule-based guardrails to avoid corrupting valid data  
+- 🤖 Uses LLMs only when needed (fallback, not override)  
+- 📊 Produces explainable corrections with a confidence score  
+- 🧾 Preserves original data for auditability  
+- 🧱 Designed to scale to millions of records  
+
+---
+
+## 🧠 High-Level Architecture
 
 ```text
-QualiFHIR_MVP/
+FHIR NDJSON (raw)
+        ↓
+ETL (clean + normalize)
+        ↓
+Rule-based validation
+        ↓
+Semantic retrieval (FAISS)
+        ↓
+LLM reasoning (only if needed)
+        ↓
+Enhanced + standardized output
+
+```
+
+> **Design Principle**  
+> Rules first → RAG only when rules fail → LLM explains decisions.
+
+---
+
+## 📁 Repository Structure
+
+```text
+qualifhir_MVP/
 │
 ├── README.md
 ├── requirements.txt
-├── .gitignore
+├── faiss_implementation.txt
 │
 ├── resources/
 │   ├── config/
-│   │   ├── paths.yaml            # file paths (input/output)
-│   │   ├── llm.yaml              # LLM model configs
-│   │   ├── loinc.yaml            # LOINC rules / mappings
-│   │   └── postal.yaml           # ZIP code validation rules
+│   │   ├── paths.yaml
+│   │   └── pipeline.yaml
 │   │
-│   ├── fhir_raw/                 # Raw Synthea NDJSON data
+│   ├── fhir_raw/
 │   │   ├── Patient.ndjson
 │   │   ├── Observation.ndjson
-│   │   ├── Condition.ndjson
-│   │   └── ... (any others)
+│   │   └── Observation_sample.ndjson
 │   │
 │   ├── loinc/
-│   │   └── loinc_reference.csv   # LOINC master file
+│   │   └── loinc_output.json
 │   │
-│   └── postal/
-│       └── zipcode_master.csv    # ZIP reference list
+│   ├── LoincTableCore.csv
+│   └── zip_code_database.csv
 │
 ├── src/
-│   ├── etl/                      # Extract + Transform
-│   │   ├── clean_patient.py      # NDJSON → Clean patient fields
-│   │   ├── clean_observation.py  # NDJSON → Clean observation fields
-│   │   ├── clean_condition.py    # optional
-│   │   ├── join_data.py          # Join Observation + Patient
-│   │   └── save_utils.py         # Save as CSV/Parquet
+│   ├── etl/
+│   │   ├── clean_observation.py
+│   │   └── clean_patient.py
 │   │
-│   ├── preprocess/               # Domain-specific cleanup
-│   │   ├── normalize_loinc.py    # normalize codes, map irregular LOINC
-│   │   ├── fix_zipcodes.py       # validate/correct postal codes
-│   │   └── validate_units.py     # optional unit normalization
-│   │
-│   ├── vector/                   
-│   │   ├── build_loinc_index.py  # build FAISS index using loinc.csv
-│   │   └── search.py             # vector similarity search
+│   ├── ingestion/
+│   │   └── fetch_loinc_catalog.py
 │   │
 │   ├── llm/
-│   │   ├── llm_client.py         # unified LLM client (OpenAI or local)
-│   │   ├── correction_agent.py   # LLM agent for data correction
-│   │   └── prompts/
-│   │       ├── loinc_cleaning.txt
-│   │       ├── observation_cleaning.txt
-│   │       └── zipcode_cleaning.txt
+│   │   └── open_source_llm.py
 │   │
-│   ├── rules/                    # Rule-based validation
-│   │   ├── loinc_rules.py
-│   │   └── postal_rules.py
+│   ├── rules/
+│   │   ├── loinc_validation.py
+│   │   └── confidence.py
 │   │
-│   └── pipeline/
-│       ├── pipeline_config.yaml
-│       └── run_pipeline.py       # 🚀 MAIN ENTRYPOINT
+│   ├── vector/
+│   │   ├── build_loinc_index.py
+│   │   └── search.py
+│   │
+│   ├── pipeline/
+│   │   ├── run_pipeline.py
+│   │   ├── run_enhancement.py
+│   │   └── enhance_observations.py
+│   │
+│   └── utils/
+│       └── create_observation_sample.py
 │
 ├── vectorstore/
-│   └── loinc_index.faiss         # Vector DB artifacts
+│   ├── index_loinc_path.faiss
+│   └── loinc_metadata.pkl
 │
-├── outputs/                      # Cleaned final data
-│   ├── cleaned_patients.csv
-│   ├── cleaned_observations.csv
-│   ├── cleaned_conditions.csv
-│   └── joined_observation_patient.csv
-│
-├── scripts/
-│   ├── preview_patient.py        # quick debug scripts
-│   ├── preview_observation.py
-│   └── load_sample_data.py
-│
-└── tests/
-    ├── test_etl.py
-    ├── test_loinc.py
-    ├── test_zipcodes.py
-    └── test_pipeline.py
+└── outputs/
+    ├── enhanced_observations.json
+    └── enhanced_observations_sample.json
 ```
+
+---
+
+## ⚙️ Setup Instructions
+
+This section explains how to set up QualiFHIR locally from scratch and run the pipeline step by step.
+
+---
+
+## 1️⃣ Prerequisites
+
+Before you begin, make sure you have:
+
+- **Python 3.9 – 3.11** (recommended)
+- Windows / macOS / Linux
+- Minimum **8 GB RAM** (16 GB recommended for smoother LLM inference)
+- Internet access (for first-time model downloads)
+
+Check Python version:
+
+```bash
+python --version
+```
+
+## 2️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/<your-org>/qualifhir_MVP.git
+cd qualifhir_MVP
+```
+
+## 3️⃣ Create a Virtual Environment (Recommended)
+
+Using a virtual environment avoids dependency conflicts.
+
+Windows
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+macOS / Linux
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+## 4️⃣ Install Dependencies
+
+Upgrade pip and install required packages:
+
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Required Packages
+
+```text
+requests
+pyyaml
+pandas
+numpy
+faiss-cpu
+sentence-transformers
+transformers
+torch
+accelerate
+```
+
+- ⚠️ First install may take a few minutes due to torch and transformers.
+
+
+## 5️⃣ Verify Installation (Optional but Recommended)
+
+Run this quick sanity check:
+
+```bash
+python - <<EOF
+import yaml, pandas, numpy, faiss, torch
+from sentence_transformers import SentenceTransformer
+print("✅ All core dependencies imported successfully")
+EOF
+```
+
+## 6️⃣ Prepare Reference Data
+
+Ensure the following files exist:
+
+```text
+resources/
+├── fhir_raw/
+│   └── Observation.ndjson
+├── loinc/
+│   └── loinc_output.json
+```
+
+- These are required for building the vector index and running the pipeline.
+
+## 7️⃣ Build the LOINC Vector Index (ONE-TIME STEP)
+
+QualiFHIR uses FAISS for semantic LOINC matching.
+
+Run:
+```bash
+python src/vector/build_loinc_index.py
+```
+
+This generates:
+
+```text
+vectorstore/
+└── loinc_index.faiss
+```
+
+- ℹ️ Re-run this step only if the LOINC reference file changes.
+
+
+## 8️⃣ Create a Small Test Dataset (Recommended for Development)
+
+Instead of processing 20k+ observations during testing, create a small controlled sample.
+```bash
+python src/utils/create_observation_sample.py
+```
+
+This creates:
+
+```text
+resources/fhir_raw/Observation_sample.ndjson
+```
+
+- The sample intentionally includes:
+    - Valid observations (height, weight)
+    - Irregular units (pain score)
+    - Broken glucose LOINC codes (for testing corrections)
+
+
+## 9️⃣ Run the Enhancement Pipeline (Main Execution)
+
+From the project root:
+```bash
+python -m src.pipeline.run_enhancement
+```
+
+- What happens internally: 
+    * Reads FHIR Observation NDJSON
+    * Applies rule-based validation
+    * Uses semantic search only when required
+    * Invokes the LLM for explanation
+    * Calculates a confidence score
+    * Writes enhanced output
+
+## 🔟 Output Location
+
+The enhanced results are written to:
+```text
+outputs/
+└── enhanced_observations.json
+```
+---

@@ -1,0 +1,65 @@
+WHAT IS RAG (RETRIEVAL-AUGMENTED GENERATION)?
+
+RAG is the technique that ties everything together: Your Database (FAISS) + A Language Model (LLM like GPT).
+LLMs (like ChatGPT) are great at talking, but they sometimes hallucinate or don't know your specific internal codes.
+RAG solves this by giving the LLM real "clues" before it answers.
+
+How the RAG workflow operates in QualiFHIR:
+1. Input (Dirty Data): A record arrives with the description: "Blood sugar level (fasting)".
+2. Retrieval (via FAISS):
+    - Your system converts that text into numbers.
+    - FAISS searches the LOINC catalog and says: "I'm not 100% sure, but mathematically,
+      this looks like these 3 official codes":
+        A: Glucose in Serum (LOINC 1558-6)
+        B: Glucose in Urine (LOINC 2345-7)
+        C: Glucose Estimation (LOINC 5678-9)
+3. Augmentation (Adding Context): The system takes those 3 candidates and creates a prompt for the LLM.
+4. Generation (via LLM): You send this to the LLM:
+    - "The user sent 'Blood sugar level (fasting)'. Here are 3 possible official codes found by
+      FAISS: [A, B, C]. Based on medical context, which one is correct?"
+    - The LLM replies: "The correct one is A (1558-6) because the input mentions 'Blood', which matches
+      'Serum', whereas B is for Urine."
+---------------------------------------------------------------------------------------------------------------------
+WHAT IS A VECTOR INDEX?
+
+Imagine you want to find a specific book in a library.
+    - Traditional Database (SQL): You search by the exact title. If you search for "Heart Attack",
+      you won't find a book titled "Myocardial Infarction" because the words are different.
+    - Vector Index: Organizes information by meaning, not by keywords.
+
+To achieve this, an AI model converts every piece of text into a list of numbers called an Embedding or Vector.
+
+In the context of QualiFHIR:
+    - The concept "Heart Attack" becomes numerical coordinates: [0.1, 0.5, 0.9].
+    - The concept "Myocardial Infarction" becomes: [0.1, 0.5, 0.8].
+    - Since the numbers are nearly identical, the system knows they mean the same thing, even if
+      the spelling differs.
+    - The Vector Index is simply the file where you store all these numbers corresponding to your master
+      catalog (LOINC).
+
+The output file (.faiss) is a binary file, not a text file. Don't save the words "Blood Glucose." Save numerical vectors
+(arrays of 32-bit floating-point numbers) compressed and optimized so your computer's RAM can read them at lightning speed.
+
+If we could decode it, what we would see are miles of lists of numbers.
+  - Vector 0: [0.015, -0.231, 0.884, ...] (Represents the first LOINC code)
+  - Vector 1: [0.552, 0.112, -0.003, ...] (Represents the second LOINC code)
+
+The .faiss file is just pure geometry. It doesn't know what those numbers mean; it only knows where they are located
+in mathematical space.
+
+Like the .faiss file, the .pkl file is not designed to be read by humans, but by the machine (Python).
+  - Plain Text (.csv): Saves the letter "A" as the letter "A".
+  - Pickle (.pkl): Serializes the information. Converts your Python dictionary into a byte stream.
+---------------------------------------------------------------------------------------------------------------------
+WHAT IS FAISS?
+
+FAISS (Facebook AI Similarity Search) is a library created by Facebook to search through those vector indices
+incredibly fast.
+If you have 5 LOINC codes, you can compare them one by one. But the LOINC catalog has tens of thousands of
+codes. Comparing your "dirty" data against 70,000 codes individually would be extremely slow.
+
+FAISS is the search engine.
+    - It organizes the vectors intelligently.
+    - When you feed it a "dirty" data point (e.g., "Fasting Glucose"), FAISS doesn't check everything;
+      it jumps straight to the mathematical "neighborhood" where "Glucose" concepts live and returns the
+      5 nearest neighbors in milliseconds.

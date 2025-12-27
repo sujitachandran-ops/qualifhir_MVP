@@ -1,15 +1,11 @@
 import json
+from typing import List, Dict
 
-def parse_patient(file_path):
-    extracted = []
+def parse_patient(file_path: str) -> List[Dict]:
+    records = []
 
-    # FIX: Force UTF-8 decoding (Windows default cp1252 fails)
     with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
-            line = line.strip()
-            if not line:
-                continue
-
             try:
                 pat = json.loads(line)
             except json.JSONDecodeError:
@@ -18,32 +14,18 @@ def parse_patient(file_path):
             if pat.get("resourceType") != "Patient":
                 continue
 
-            # name extraction
             name = pat.get("name", [{}])[0]
-            full_name = " ".join(name.get("given", [])) + " " + name.get("family", "")
-
-            # address
             address = pat.get("address", [{}])[0]
 
-            record = {
-                "id": pat.get("id"),
-                "name": full_name.strip(),
+            records.append({
+                "patient_id": pat.get("id"),
+                "name": f"{' '.join(name.get('given', []))} {name.get('family', '')}".strip(),
                 "gender": pat.get("gender"),
-                "birthDate": pat.get("birthDate"),
+                "birth_date": pat.get("birthDate"),
                 "city": address.get("city"),
                 "state": address.get("state"),
-                "postalCode": address.get("postalCode"),
+                "postal_code": address.get("postalCode"),
                 "country": address.get("country")
-            }
+            })
 
-            extracted.append(record)
-
-    return extracted
-
-
-if __name__ == "__main__":
-    path = "resources/fhir_raw/Patient.ndjson"  # update if needed
-    data = parse_patient(path)
-    print("Total patients extracted:", len(data))
-    #print(data[:5])
-    print(json.dumps(data[:5], indent=4))
+    return records

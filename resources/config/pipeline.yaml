@@ -1,0 +1,5 @@
+rag:
+  top_k: 5
+
+llm:
+  model_name: mistralai/Mistral-7B-Instruct-v0.2
