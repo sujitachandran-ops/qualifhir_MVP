@@ -7,6 +7,7 @@ OUTPUT = "resources/fhir_raw/Observation_sample.ndjson"
 glucose = []
 vitals = []
 pain = []
+respiratory = []
 
 with open(INPUT, "r", encoding="utf-8") as f:
     for line in f:
@@ -19,12 +20,15 @@ with open(INPUT, "r", encoding="utf-8") as f:
             vitals.append(obs)
         elif "pain" in display:
             pain.append(obs)
+        elif "respiratory" in display:
+            respiratory.append(obs)
 
 # Pick small samples
 sample = (
     random.sample(glucose, min(3, len(glucose))) +
     random.sample(vitals, min(3, len(vitals))) +
-    random.sample(pain, min(2, len(pain)))
+    random.sample(pain, min(2, len(pain))) +
+    random.sample(respiratory, min(4, len(respiratory)))
 )
 
 # 🔥 INTENTIONALLY BREAK some glucose records
@@ -33,6 +37,9 @@ for obs in sample:
     if "glucose" in display:
         obs["code"]["coding"][0]["code"] = "XXXX-INVALID"
         obs["code"]["coding"][0]["display"] = "Blood sugar level"
+    elif "respiratory" in display:
+        obs["code"]["coding"][0]["code"] = "XXXX-INVALID"
+        obs["code"]["coding"][0]["display"] = "Respiratory System"
 
 # Write NDJSON
 with open(OUTPUT, "w", encoding="utf-8") as f:

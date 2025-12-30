@@ -1,12 +1,15 @@
 import json
 import requests
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def fetch_loinc_catalog(
-    query="glucose",
+    query="respiratory",
     rows=500,
     output_file="resources/loinc/loinc_output.json",
-    username=None,
-    password=None
+    username="",
+    password=""
 ):
     offset_value = 0
     loinc_data = {'Results' : []}
@@ -19,9 +22,9 @@ def fetch_loinc_catalog(
         response = requests.get(
             url,
             auth=(username, password),
-            timeout=10
+            timeout=10,verify=False
         )
-        response.raise_for_status()
+        # response.raise_for_status()
 
         loinc_data['Results'].extend(response.json()['Results'])
         returned_rows = response.json().get('ResponseSummary', {}).get('RowsReturned', 0)
