@@ -8,24 +8,34 @@ def fetch_loinc_catalog(
     username=None,
     password=None
 ):
-    url = (
-        "https://loinc.regenstrief.org/searchapi/loincs"
-        f"?query={query}&rows={rows}&sortorder=loinc_num"
-    )
+    offset_value = 0
+    loinc_data = {'Results' : []}
+    while True:
+        url = (
+            "https://loinc.regenstrief.org/searchapi/loincs"
+            f"?query={query}&rows={rows}&offset={offset_value}&sortorder=loinc_num"
+        )
 
-    response = requests.get(
-        url,
-        auth=(username, password),
-        timeout=10
-    )
-    response.raise_for_status()
+        response = requests.get(
+            url,
+            auth=(username, password),
+            timeout=10
+        )
+        response.raise_for_status()
 
-    data = response.json()
+        loinc_data['Results'].extend(response.json()['Results'])
+        returned_rows = response.json().get('ResponseSummary', {}).get('RowsReturned', 0)
+
+        if returned_rows < rows:
+            break
+
+        offset_value += rows
 
     with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
+        json.dump(loinc_data, f, indent=2)
 
     print(f"LOINC catalog saved to {output_file}")
+    print(f"Length of the data stored is {len(loinc_data['Results'])}")
 
 if __name__ == "__main__":
     fetch_loinc_catalog()
