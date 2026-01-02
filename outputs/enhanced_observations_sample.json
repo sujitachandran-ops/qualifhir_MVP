@@ -1,15 +1,15 @@
 [
   {
-    "observation_id": "223a8712-6553-5913-dc6c-63e742fbcbd6",
+    "observation_id": "3340cc16-54a3-fb04-0529-896682d3859a",
     "original_loinc_code": "XXXX-INVALID",
     "original_display": "Blood sugar level",
-    "value": 1.7978,
+    "value": 0.82116,
     "unit": "mg/dL",
     "ucum_code": "mg/dL",
-    "effective_datetime": "2022-07-03T07:43:20+05:30",
+    "effective_datetime": "2014-01-21T00:03:01+05:30",
     "raw_observation": {
       "resourceType": "Observation",
-      "id": "223a8712-6553-5913-dc6c-63e742fbcbd6",
+      "id": "3340cc16-54a3-fb04-0529-896682d3859a",
       "meta": {
         "profile": [
           "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab",
@@ -39,59 +39,59 @@
         "text": "Glucose [Mass/volume] in Urine by Test strip"
       },
       "subject": {
-        "reference": "Patient/223a8712-6553-5913-e3ed-8e47fb83b8bc"
+        "reference": "Patient/3340cc16-54a3-fb04-8baa-946d81a6b1e4"
       },
       "encounter": {
-        "reference": "Encounter/223a8712-6553-5913-bc44-345a57a8a337"
+        "reference": "Encounter/3340cc16-54a3-fb04-eb12-95053a605bfb"
       },
-      "effectiveDateTime": "2022-07-03T07:43:20+05:30",
-      "issued": "2022-07-03T07:43:20.309+05:30",
+      "effectiveDateTime": "2014-01-21T00:03:01+05:30",
+      "issued": "2014-01-21T00:03:01.049+05:30",
       "valueQuantity": {
-        "value": 1.7978,
+        "value": 0.82116,
         "unit": "mg/dL",
         "system": "http://unitsofmeasure.org",
         "code": "mg/dL"
       }
     },
-    "recommended_loinc": "18296-4",
-    "confidence_score": 0.636,
+    "recommended_loinc": "71890-8",
+    "confidence_score": 0.565,
     "enhancement_required": true,
     "loinc_candidates": [
       {
-        "score": 0.6837196350097656,
-        "loinc_num": "18296-4",
-        "long_common_name": "Glucose [Interpretation] in Serum or Plasma--post dose glucose",
-        "system": "Ser/Plas",
-        "component": "Glucose^post dose glucose"
+        "score": 1.1052753925323486,
+        "loinc_num": "71890-8",
+        "long_common_name": "Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in Blood",
+        "system": "Bld",
+        "component": "Carboxyhemoglobin/Hemoglobin.total"
       },
       {
-        "score": 0.7263550162315369,
-        "loinc_num": "110939-6",
-        "long_common_name": "Glucose [Measurement] in Blood",
+        "score": 1.1494375467300415,
+        "loinc_num": "20563-3",
+        "long_common_name": "Carboxyhemoglobin/Hemoglobin.total in Blood",
         "system": "Bld",
-        "component": "Glucose"
+        "component": "Carboxyhemoglobin/Hemoglobin.total"
       },
       {
-        "score": 0.7354832887649536,
-        "loinc_num": "27353-2",
-        "long_common_name": "Glucose mean value [Mass/volume] in Blood Estimated from glycated hemoglobin",
-        "system": "Bld",
-        "component": "Estimated average glucose"
+        "score": 1.1524882316589355,
+        "loinc_num": "71885-8",
+        "long_common_name": "Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in Mixed venous blood",
+        "system": "BldMV",
+        "component": "Carboxyhemoglobin/Hemoglobin.total"
       }
     ],
-    "llm_explanation": "LOINC codes are: 18296-4 - Glucose [Interpretation] in Serum or Plasma--post dose gluco 110939-6 - Glucose [Measurement] in Blood 27353-2 - Glucose mean value [Mass/volume] in Blood Estimated from gly Task: Test: Blood sugar level Value: 1.7978 mg/dL Candidate LOINC codes: 18296-4 - Glucose [Interpretation] in Serum or Plasma--post dose gluco 110939-6 - Glucose [Measurement] in Blood 27353-2 - Glucose mean value [Mass/volume] in Blood Estimated from gly Task: Select the best LOINC code and explain briefly."
+    "llm_explanation": "71890-8 - Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in B 20563-3 - Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in M 71885-8 - Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in M"
   },
   {
-    "observation_id": "0005f0a6-732f-437f-242c-071eab3c0ed4",
+    "observation_id": "e1c98be2-a933-3f31-87fe-e3324619e3e7",
     "original_loinc_code": "XXXX-INVALID",
     "original_display": "Blood sugar level",
-    "value": 74.8,
-    "unit": "mg/dL",
-    "ucum_code": "mg/dL",
-    "effective_datetime": "2015-09-20T22:38:59+05:30",
+    "value": null,
+    "unit": null,
+    "ucum_code": null,
+    "effective_datetime": "2005-09-16T09:39:23+05:30",
     "raw_observation": {
       "resourceType": "Observation",
-      "id": "0005f0a6-732f-437f-242c-071eab3c0ed4",
+      "id": "e1c98be2-a933-3f31-87fe-e3324619e3e7",
       "meta": {
         "profile": [
           "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab",
@@ -118,62 +118,66 @@
             "display": "Blood sugar level"
           }
         ],
-        "text": "Glucose [Mass/volume] in Blood"
+        "text": "Glucose [Presence] in Urine by Test strip"
       },
       "subject": {
-        "reference": "Patient/0005f0a6-732f-437f-3839-7b840932ce64"
+        "reference": "Patient/e1c98be2-a933-3f31-4fd9-c2824e170876"
       },
       "encounter": {
-        "reference": "Encounter/0005f0a6-732f-437f-689c-c0154d55033f"
+        "reference": "Encounter/e1c98be2-a933-3f31-6391-c8baef3dab34"
       },
-      "effectiveDateTime": "2015-09-20T22:38:59+05:30",
-      "issued": "2015-09-20T22:38:59.025+05:30",
-      "valueQuantity": {
-        "value": 74.8,
-        "unit": "mg/dL",
-        "system": "http://unitsofmeasure.org",
-        "code": "mg/dL"
+      "effectiveDateTime": "2005-09-16T09:39:23+05:30",
+      "issued": "2005-09-16T09:39:23.727+05:30",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "167265006",
+            "display": "Urine glucose test = ++ (finding)"
+          }
+        ],
+        "text": "Urine glucose test = ++ (finding)"
       }
     },
-    "recommended_loinc": "18296-4",
-    "confidence_score": 0.626,
+    "recommended_loinc": "30318-0",
+    "confidence_score": 0.411,
     "enhancement_required": true,
     "loinc_candidates": [
       {
-        "score": 0.7331415414810181,
-        "loinc_num": "18296-4",
-        "long_common_name": "Glucose [Interpretation] in Serum or Plasma--post dose glucose",
-        "system": "Ser/Plas",
-        "component": "Glucose^post dose glucose"
-      },
-      {
-        "score": 0.7791190147399902,
-        "loinc_num": "27353-2",
-        "long_common_name": "Glucose mean value [Mass/volume] in Blood Estimated from glycated hemoglobin",
+        "score": 1.2108311653137207,
+        "loinc_num": "30318-0",
+        "long_common_name": "Base deficit in Blood",
         "system": "Bld",
-        "component": "Estimated average glucose"
+        "component": "Base deficit"
       },
       {
-        "score": 0.8105871081352234,
-        "loinc_num": "1548-7",
-        "long_common_name": "Glucose [Mass/volume] in Serum or Plasma --pre 0.5 g/kg glucose IV",
-        "system": "Ser/Plas",
-        "component": "Glucose^pre 0.5 g/kg glucose IV"
+        "score": 1.2230924367904663,
+        "loinc_num": "65343-6",
+        "long_common_name": "Oxygen [Partial pressure] saturation adjusted to 0.5 in Blood",
+        "system": "Bld",
+        "component": "Oxygen^^saturation adjusted to 0.5"
+      },
+      {
+        "score": 1.2372076511383057,
+        "loinc_num": "71890-8",
+        "long_common_name": "Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in Blood",
+        "system": "Bld",
+        "component": "Carboxyhemoglobin/Hemoglobin.total"
       }
     ],
-    "llm_explanation": "Glucose [Interpretation] in Serum or Plasma--post dose gluco 27353-2 - Glucose mean value [Mass/volume] in Blood Estimated from gly 1548-7 - Glucose [Mass/volume] in Serum or Plasma --pre 0.5 g/kg gluc"
+    "llm_explanation": "30318-0 - Base deficit in Blood 65343-6 - Oxygen [Partial pressure] saturation adjusted to 0.5 in Bloo 71890-8 - Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in B"
   },
   {
-    "observation_id": "9668b854-2d7f-e0a4-352f-388d2f74aa7e",
+    "observation_id": "bbf2cd6b-641c-71c3-786d-90e19cb737e0",
     "original_loinc_code": "XXXX-INVALID",
     "original_display": "Blood sugar level",
-    "value": 1.7499,
+    "value": 1.6589,
     "unit": "mg/dL",
     "ucum_code": "mg/dL",
-    "effective_datetime": "2022-09-20T08:41:47+05:30",
+    "effective_datetime": "2018-07-18T03:08:30+05:30",
     "raw_observation": {
       "resourceType": "Observation",
-      "id": "9668b854-2d7f-e0a4-352f-388d2f74aa7e",
+      "id": "bbf2cd6b-641c-71c3-786d-90e19cb737e0",
       "meta": {
         "profile": [
           "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab",
@@ -203,59 +207,64 @@
         "text": "Glucose [Mass/volume] in Urine by Test strip"
       },
       "subject": {
-        "reference": "Patient/9668b854-2d7f-e0a4-b4b3-6b7ae7881282"
+        "reference": "Patient/bbf2cd6b-641c-71c3-599e-c33510bc0b3d"
       },
       "encounter": {
-        "reference": "Encounter/9668b854-2d7f-e0a4-a759-1290d79dffb6"
+        "reference": "Encounter/bbf2cd6b-641c-71c3-f349-cee0bd69ac47"
       },
-      "effectiveDateTime": "2022-09-20T08:41:47+05:30",
-      "issued": "2022-09-20T08:41:47.408+05:30",
+      "effectiveDateTime": "2018-07-18T03:08:30+05:30",
+      "issued": "2018-07-18T03:08:30.245+05:30",
       "valueQuantity": {
-        "value": 1.7499,
+        "value": 1.6589,
         "unit": "mg/dL",
         "system": "http://unitsofmeasure.org",
         "code": "mg/dL"
       }
     },
-    "recommended_loinc": "18296-4",
-    "confidence_score": 0.638,
+    "recommended_loinc": "71890-8",
+    "confidence_score": 0.563,
     "enhancement_required": true,
     "loinc_candidates": [
       {
-        "score": 0.6770307421684265,
-        "loinc_num": "18296-4",
-        "long_common_name": "Glucose [Interpretation] in Serum or Plasma--post dose glucose",
-        "system": "Ser/Plas",
-        "component": "Glucose^post dose glucose"
+        "score": 1.1165850162506104,
+        "loinc_num": "71890-8",
+        "long_common_name": "Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in Blood",
+        "system": "Bld",
+        "component": "Carboxyhemoglobin/Hemoglobin.total"
       },
       {
-        "score": 0.7187821865081787,
-        "loinc_num": "27353-2",
-        "long_common_name": "Glucose mean value [Mass/volume] in Blood Estimated from glycated hemoglobin",
+        "score": 1.1641956567764282,
+        "loinc_num": "20563-3",
+        "long_common_name": "Carboxyhemoglobin/Hemoglobin.total in Blood",
         "system": "Bld",
-        "component": "Estimated average glucose"
+        "component": "Carboxyhemoglobin/Hemoglobin.total"
       },
       {
-        "score": 0.7266024351119995,
-        "loinc_num": "110939-6",
-        "long_common_name": "Glucose [Measurement] in Blood",
-        "system": "Bld",
-        "component": "Glucose"
+        "score": 1.166739821434021,
+        "loinc_num": "71889-0",
+        "long_common_name": "Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in Arterial blood",
+        "system": "BldA",
+        "component": "Carboxyhemoglobin/Hemoglobin.total"
       }
     ],
-    "llm_explanation": "LOINC codes are: 18296-4 - Glucose [Interpretation] in Serum or Plasma--post dose gluco 27353-2 - Glucose mean value [Mass/volume] in Blood Estimated from gly 110939-6 - Glucose [Measurement] in Blood Task: Select the best LOINC code and explain briefly."
+    "llm_explanation": "71890-8 - Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in B 20563-3 - Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in A 71889-0 - Carboxyhemoglobin/Hemoglobin.total [Pure mass fraction] in A"
   },
   {
-    "observation_id": "51a87bf1-a528-0773-ef18-ae5b51b4dde3",
-    "original_loinc_code": "74006-8",
-    "original_display": "Weight difference [Mass difference] --pre dialysis - post dialysis",
-    "value": 1.8311,
-    "unit": "kg",
-    "ucum_code": "kg",
-    "effective_datetime": "2025-01-20T10:46:24+05:30",
+    "observation_id": "d156c75e-a78f-14d9-dfee-44509628ab0c",
+    "original_loinc_code": "8302-2",
+    "original_display": "Body Height",
+    "value": 175.5,
+    "unit": "cm",
+    "ucum_code": "cm",
+    "effective_datetime": "2015-07-07T10:36:31+05:30",
     "raw_observation": {
       "resourceType": "Observation",
-      "id": "51a87bf1-a528-0773-ef18-ae5b51b4dde3",
+      "id": "d156c75e-a78f-14d9-dfee-44509628ab0c",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height"
+        ]
+      },
       "status": "final",
       "category": [
         {
@@ -272,44 +281,44 @@
         "coding": [
           {
             "system": "http://loinc.org",
-            "code": "74006-8",
-            "display": "Weight difference [Mass difference] --pre dialysis - post dialysis"
+            "code": "8302-2",
+            "display": "Body Height"
           }
         ],
-        "text": "Weight difference [Mass difference] --pre dialysis - post dialysis"
+        "text": "Body Height"
       },
       "subject": {
-        "reference": "Patient/51a87bf1-a528-0773-2444-d2fe73c3000a"
+        "reference": "Patient/d156c75e-a78f-14d9-34fb-0e3934977296"
       },
       "encounter": {
-        "reference": "Encounter/51a87bf1-a528-0773-5b51-6fb5a309bd5d"
+        "reference": "Encounter/d156c75e-a78f-14d9-45f7-3dab4d7b773e"
       },
-      "effectiveDateTime": "2025-01-20T10:46:24+05:30",
-      "issued": "2025-01-20T10:46:24.309+05:30",
+      "effectiveDateTime": "2015-07-07T10:36:31+05:30",
+      "issued": "2015-07-07T10:36:31.306+05:30",
       "valueQuantity": {
-        "value": 1.8311,
-        "unit": "kg",
+        "value": 175.5,
+        "unit": "cm",
         "system": "http://unitsofmeasure.org",
-        "code": "kg"
+        "code": "cm"
       }
     },
-    "recommended_loinc": "74006-8",
+    "recommended_loinc": "8302-2",
     "confidence_score": 1.0,
     "enhancement_required": false,
     "loinc_candidates": [],
     "llm_explanation": "Original LOINC code and unit are valid. No enhancement required."
   },
   {
-    "observation_id": "d7c8fe42-6df6-0227-a931-ad3a9272f341",
+    "observation_id": "d635996b-c4ec-3db7-9438-31919c5680a8",
     "original_loinc_code": "29463-7",
     "original_display": "Body Weight",
-    "value": 91.8,
+    "value": 84,
     "unit": "kg",
     "ucum_code": "kg",
-    "effective_datetime": "2018-06-30T02:33:35+05:30",
+    "effective_datetime": "2005-07-22T23:23:42+05:30",
     "raw_observation": {
       "resourceType": "Observation",
-      "id": "d7c8fe42-6df6-0227-a931-ad3a9272f341",
+      "id": "d635996b-c4ec-3db7-9438-31919c5680a8",
       "meta": {
         "profile": [
           "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight"
@@ -338,15 +347,15 @@
         "text": "Body Weight"
       },
       "subject": {
-        "reference": "Patient/d7c8fe42-6df6-0227-c1b1-b4a128f8cbb4"
+        "reference": "Patient/d635996b-c4ec-3db7-ee74-9bf4cb22fe5e"
       },
       "encounter": {
-        "reference": "Encounter/d7c8fe42-6df6-0227-7ed5-855f568e7470"
+        "reference": "Encounter/d635996b-c4ec-3db7-e2c9-5487ac7dc36f"
       },
-      "effectiveDateTime": "2018-06-30T02:33:35+05:30",
-      "issued": "2018-06-30T02:33:35.517+05:30",
+      "effectiveDateTime": "2005-07-22T23:23:42+05:30",
+      "issued": "2005-07-22T23:23:42.098+05:30",
       "valueQuantity": {
-        "value": 91.8,
+        "value": 84,
         "unit": "kg",
         "system": "http://unitsofmeasure.org",
         "code": "kg"
@@ -359,19 +368,19 @@
     "llm_explanation": "Original LOINC code and unit are valid. No enhancement required."
   },
   {
-    "observation_id": "44f56c3c-31c1-61b6-aae6-ea25250ec4af",
-    "original_loinc_code": "29463-7",
-    "original_display": "Body Weight",
-    "value": 26.9,
-    "unit": "kg",
-    "ucum_code": "kg",
-    "effective_datetime": "2018-12-04T03:04:23+05:30",
+    "observation_id": "e06a9b48-5beb-7b98-fd72-4e4b4241d203",
+    "original_loinc_code": "8302-2",
+    "original_display": "Body Height",
+    "value": 96.2,
+    "unit": "cm",
+    "ucum_code": "cm",
+    "effective_datetime": "2023-11-08T16:22:56+05:30",
     "raw_observation": {
       "resourceType": "Observation",
-      "id": "44f56c3c-31c1-61b6-aae6-ea25250ec4af",
+      "id": "e06a9b48-5beb-7b98-fd72-4e4b4241d203",
       "meta": {
         "profile": [
-          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-weight"
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-body-height"
         ]
       },
       "status": "final",
@@ -390,44 +399,44 @@
         "coding": [
           {
             "system": "http://loinc.org",
-            "code": "29463-7",
-            "display": "Body Weight"
+            "code": "8302-2",
+            "display": "Body Height"
           }
         ],
-        "text": "Body Weight"
+        "text": "Body Height"
       },
       "subject": {
-        "reference": "Patient/44f56c3c-31c1-61b6-be0f-788b125cefe3"
+        "reference": "Patient/e06a9b48-5beb-7b98-ad40-3fbd7d405647"
       },
       "encounter": {
-        "reference": "Encounter/44f56c3c-31c1-61b6-574d-b5b82913f81e"
+        "reference": "Encounter/e06a9b48-5beb-7b98-52a3-dc3e99cfb9b9"
       },
-      "effectiveDateTime": "2018-12-04T03:04:23+05:30",
-      "issued": "2018-12-04T03:04:23.301+05:30",
+      "effectiveDateTime": "2023-11-08T16:22:56+05:30",
+      "issued": "2023-11-08T16:22:56.275+05:30",
       "valueQuantity": {
-        "value": 26.9,
-        "unit": "kg",
+        "value": 96.2,
+        "unit": "cm",
         "system": "http://unitsofmeasure.org",
-        "code": "kg"
+        "code": "cm"
       }
     },
-    "recommended_loinc": "29463-7",
+    "recommended_loinc": "8302-2",
     "confidence_score": 1.0,
     "enhancement_required": false,
     "loinc_candidates": [],
     "llm_explanation": "Original LOINC code and unit are valid. No enhancement required."
   },
   {
-    "observation_id": "895019b2-702b-5ef8-f2d0-492c55e464c0",
+    "observation_id": "c52d37fb-6c1c-9a74-ce33-284e19ced5b8",
     "original_loinc_code": "72514-3",
     "original_display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported",
-    "value": 2,
+    "value": 0,
     "unit": "{score}",
     "ucum_code": "{score}",
-    "effective_datetime": "2020-01-07T16:12:48+05:30",
+    "effective_datetime": "2020-03-26T03:54:18+05:30",
     "raw_observation": {
       "resourceType": "Observation",
-      "id": "895019b2-702b-5ef8-f2d0-492c55e464c0",
+      "id": "c52d37fb-6c1c-9a74-ce33-284e19ced5b8",
       "status": "final",
       "category": [
         {
@@ -451,59 +460,59 @@
         "text": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
       },
       "subject": {
-        "reference": "Patient/895019b2-702b-5ef8-8a64-341cf2d73cae"
+        "reference": "Patient/c52d37fb-6c1c-9a74-abd8-bfbe4defcc36"
       },
       "encounter": {
-        "reference": "Encounter/895019b2-702b-5ef8-1b61-c7dd9de8e272"
+        "reference": "Encounter/c52d37fb-6c1c-9a74-7bb5-9a686c77e21d"
       },
-      "effectiveDateTime": "2020-01-07T16:12:48+05:30",
-      "issued": "2020-01-07T16:12:48.016+05:30",
+      "effectiveDateTime": "2020-03-26T03:54:18+05:30",
+      "issued": "2020-03-26T03:54:18.115+05:30",
       "valueQuantity": {
-        "value": 2,
+        "value": 0,
         "unit": "{score}",
         "system": "http://unitsofmeasure.org",
         "code": "{score}"
       }
     },
-    "recommended_loinc": "104637-4",
-    "confidence_score": 0.447,
+    "recommended_loinc": "59269-1",
+    "confidence_score": 0.504,
     "enhancement_required": true,
     "loinc_candidates": [
       {
-        "score": 1.4247403144836426,
-        "loinc_num": "104637-4",
-        "long_common_name": "Percentage of time continuous glucose monitor device worn Reporting Period Calculated",
+        "score": 0.9734999537467957,
+        "loinc_num": "59269-1",
+        "long_common_name": "Respiratory severity score",
+        "system": "Respiratory system.airway+Inhl Gas",
+        "component": "Respiratory severity score"
+      },
+      {
+        "score": 1.046945333480835,
+        "loinc_num": "89292-7",
+        "long_common_name": "Respiratory rate --W pain",
+        "system": "Respiratory system",
+        "component": "Breaths^W pain"
+      },
+      {
+        "score": 1.1644282341003418,
+        "loinc_num": "89907-0",
+        "long_common_name": "Total score [CRQ-SAI]",
         "system": "^Patient",
-        "component": "Percentage of time continuous glucose monitor device worn"
-      },
-      {
-        "score": 1.4369230270385742,
-        "loinc_num": "101132-9",
-        "long_common_name": "Glucose post XXX challenge panel - Serum or Plasma",
-        "system": "Ser/Plas",
-        "component": "Glucose post XXX challenge panel"
-      },
-      {
-        "score": 1.444246768951416,
-        "loinc_num": "101977-7",
-        "long_common_name": "Cortisol, glucose and somatotropin post glucagon stimulation panel - Serum or Plasma",
-        "system": "Ser/Plas",
-        "component": "Cortisol, glucose and somatotropin post glucagon stimulation panel"
+        "component": "Total score"
       }
     ],
-    "llm_explanation": "104637-4 - Percentage of time continuous glucose monitor device worn Re 101132-9 - Glucose post XXX challenge panel - Serum or Plasma 101977-7 - Cortisol, glucose and somatotropin post glucagon stimulation"
+    "llm_explanation": "59269-1 - Respiratory severity score 89292-7 - Respiratory rate --W pain 89907-0 - Total score [CRQ-SAI]"
   },
   {
-    "observation_id": "aebf407e-36ac-33e4-2f14-10c2d1e12916",
+    "observation_id": "e9e21bdc-d502-816b-e966-108858bd76c8",
     "original_loinc_code": "72514-3",
     "original_display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported",
-    "value": 2,
+    "value": 3,
     "unit": "{score}",
     "ucum_code": "{score}",
-    "effective_datetime": "2016-03-26T18:42:39+05:30",
+    "effective_datetime": "2000-12-03T07:31:35+05:30",
     "raw_observation": {
       "resourceType": "Observation",
-      "id": "aebf407e-36ac-33e4-2f14-10c2d1e12916",
+      "id": "e9e21bdc-d502-816b-e966-108858bd76c8",
       "status": "final",
       "category": [
         {
@@ -527,46 +536,370 @@
         "text": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
       },
       "subject": {
-        "reference": "Patient/aebf407e-36ac-33e4-255b-f119569c59c2"
+        "reference": "Patient/e9e21bdc-d502-816b-a6b5-6518a3645f89"
       },
       "encounter": {
-        "reference": "Encounter/aebf407e-36ac-33e4-503f-3b2dbe344250"
+        "reference": "Encounter/e9e21bdc-d502-816b-47ec-ec9dccb97b59"
       },
-      "effectiveDateTime": "2016-03-26T18:42:39+05:30",
-      "issued": "2016-03-26T18:42:39.389+05:30",
+      "effectiveDateTime": "2000-12-03T07:31:35+05:30",
+      "issued": "2000-12-03T07:31:35.639+05:30",
       "valueQuantity": {
-        "value": 2,
+        "value": 3,
         "unit": "{score}",
         "system": "http://unitsofmeasure.org",
         "code": "{score}"
       }
     },
-    "recommended_loinc": "104637-4",
-    "confidence_score": 0.447,
+    "recommended_loinc": "59269-1",
+    "confidence_score": 0.506,
     "enhancement_required": true,
     "loinc_candidates": [
       {
-        "score": 1.4247403144836426,
-        "loinc_num": "104637-4",
-        "long_common_name": "Percentage of time continuous glucose monitor device worn Reporting Period Calculated",
+        "score": 0.9599071145057678,
+        "loinc_num": "59269-1",
+        "long_common_name": "Respiratory severity score",
+        "system": "Respiratory system.airway+Inhl Gas",
+        "component": "Respiratory severity score"
+      },
+      {
+        "score": 1.0448625087738037,
+        "loinc_num": "89292-7",
+        "long_common_name": "Respiratory rate --W pain",
+        "system": "Respiratory system",
+        "component": "Breaths^W pain"
+      },
+      {
+        "score": 1.1615679264068604,
+        "loinc_num": "89904-7",
+        "long_common_name": "Total score [CRQ-SAS]",
         "system": "^Patient",
-        "component": "Percentage of time continuous glucose monitor device worn"
-      },
-      {
-        "score": 1.4369230270385742,
-        "loinc_num": "101132-9",
-        "long_common_name": "Glucose post XXX challenge panel - Serum or Plasma",
-        "system": "Ser/Plas",
-        "component": "Glucose post XXX challenge panel"
-      },
-      {
-        "score": 1.444246768951416,
-        "loinc_num": "101977-7",
-        "long_common_name": "Cortisol, glucose and somatotropin post glucagon stimulation panel - Serum or Plasma",
-        "system": "Ser/Plas",
-        "component": "Cortisol, glucose and somatotropin post glucagon stimulation panel"
+        "component": "Total score"
       }
     ],
-    "llm_explanation": "104637-4 - Percentage of time continuous glucose monitor device worn Re 101132-9 - Glucose post XXX challenge panel - Serum or Plasma 101977-7 - Cortisol, glucose and somatotropin post glucagon stimulation"
+    "llm_explanation": "59269-1 - Respiratory severity score 89292-7 - Respiratory rate --W pain 89904-7 - Total score [CRQ-SAS]"
+  },
+  {
+    "observation_id": "a08f4b9c-2203-e9c9-9273-1b61bec18c1e",
+    "original_loinc_code": "XXXX-INVALID",
+    "original_display": "Respiratory System",
+    "value": 14,
+    "unit": "/min",
+    "ucum_code": "/min",
+    "effective_datetime": "2022-11-10T08:55:38+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "a08f4b9c-2203-e9c9-9273-1b61bec18c1e",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "XXXX-INVALID",
+            "display": "Respiratory System"
+          }
+        ],
+        "text": "Respiratory rate"
+      },
+      "subject": {
+        "reference": "Patient/a08f4b9c-2203-e9c9-9ad3-b04a96727c3a"
+      },
+      "encounter": {
+        "reference": "Encounter/a08f4b9c-2203-e9c9-81c5-ef195f050824"
+      },
+      "effectiveDateTime": "2022-11-10T08:55:38+05:30",
+      "issued": "2022-11-10T08:55:38.672+05:30",
+      "valueQuantity": {
+        "value": 14,
+        "unit": "/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    "recommended_loinc": "88058-3",
+    "confidence_score": 0.695,
+    "enhancement_required": true,
+    "loinc_candidates": [
+      {
+        "score": 0.44508305191993713,
+        "loinc_num": "88058-3",
+        "long_common_name": "Respiratory measurements Document",
+        "system": "^Patient",
+        "component": "Respiratory measurements"
+      },
+      {
+        "score": 0.4709581732749939,
+        "loinc_num": "9286-6",
+        "long_common_name": "Respiratory rate 8 hour",
+        "system": "Respiratory system",
+        "component": "Breaths"
+      },
+      {
+        "score": 0.4775351881980896,
+        "loinc_num": "9288-2",
+        "long_common_name": "Respiratory rate 12 hour",
+        "system": "Respiratory system",
+        "component": "Breaths"
+      }
+    ],
+    "llm_explanation": "88058-3 - Respiratory measurements Document 9286-6 - Respiratory rate 8 hour 9288-2 - Respiratory rate 12 hour"
+  },
+  {
+    "observation_id": "dd337692-de6e-8d5e-2618-9ebd5e038b14",
+    "original_loinc_code": "XXXX-INVALID",
+    "original_display": "Respiratory System",
+    "value": 14,
+    "unit": "/min",
+    "ucum_code": "/min",
+    "effective_datetime": "2007-01-16T16:01:52+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "dd337692-de6e-8d5e-2618-9ebd5e038b14",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "XXXX-INVALID",
+            "display": "Respiratory System"
+          }
+        ],
+        "text": "Respiratory rate"
+      },
+      "subject": {
+        "reference": "Patient/dd337692-de6e-8d5e-b525-b0d12a2f351a"
+      },
+      "encounter": {
+        "reference": "Encounter/dd337692-de6e-8d5e-108c-5e64ad112744"
+      },
+      "effectiveDateTime": "2007-01-16T16:01:52+05:30",
+      "issued": "2007-01-16T16:01:52.924+05:30",
+      "valueQuantity": {
+        "value": 14,
+        "unit": "/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    "recommended_loinc": "88058-3",
+    "confidence_score": 0.695,
+    "enhancement_required": true,
+    "loinc_candidates": [
+      {
+        "score": 0.44508305191993713,
+        "loinc_num": "88058-3",
+        "long_common_name": "Respiratory measurements Document",
+        "system": "^Patient",
+        "component": "Respiratory measurements"
+      },
+      {
+        "score": 0.4709581732749939,
+        "loinc_num": "9286-6",
+        "long_common_name": "Respiratory rate 8 hour",
+        "system": "Respiratory system",
+        "component": "Breaths"
+      },
+      {
+        "score": 0.4775351881980896,
+        "loinc_num": "9288-2",
+        "long_common_name": "Respiratory rate 12 hour",
+        "system": "Respiratory system",
+        "component": "Breaths"
+      }
+    ],
+    "llm_explanation": "88058-3 - Respiratory measurements Document 9286-6 - Respiratory rate 8 hour 9288-2 - Respiratory rate 12 hour"
+  },
+  {
+    "observation_id": "99750aa0-1acc-c1c3-8cc0-4ffc6a8f72f7",
+    "original_loinc_code": "XXXX-INVALID",
+    "original_display": "Respiratory System",
+    "value": 13,
+    "unit": "/min",
+    "ucum_code": "/min",
+    "effective_datetime": "2016-05-08T12:37:57+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "99750aa0-1acc-c1c3-8cc0-4ffc6a8f72f7",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "XXXX-INVALID",
+            "display": "Respiratory System"
+          }
+        ],
+        "text": "Respiratory rate"
+      },
+      "subject": {
+        "reference": "Patient/99750aa0-1acc-c1c3-831f-195fa9a2f257"
+      },
+      "encounter": {
+        "reference": "Encounter/99750aa0-1acc-c1c3-5fee-14a20b636e5e"
+      },
+      "effectiveDateTime": "2016-05-08T12:37:57+05:30",
+      "issued": "2016-05-08T12:37:57.981+05:30",
+      "valueQuantity": {
+        "value": 13,
+        "unit": "/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    "recommended_loinc": "88058-3",
+    "confidence_score": 0.695,
+    "enhancement_required": true,
+    "loinc_candidates": [
+      {
+        "score": 0.4452371895313263,
+        "loinc_num": "88058-3",
+        "long_common_name": "Respiratory measurements Document",
+        "system": "^Patient",
+        "component": "Respiratory measurements"
+      },
+      {
+        "score": 0.4552723169326782,
+        "loinc_num": "9288-2",
+        "long_common_name": "Respiratory rate 12 hour",
+        "system": "Respiratory system",
+        "component": "Breaths"
+      },
+      {
+        "score": 0.47342628240585327,
+        "loinc_num": "9286-6",
+        "long_common_name": "Respiratory rate 8 hour",
+        "system": "Respiratory system",
+        "component": "Breaths"
+      }
+    ],
+    "llm_explanation": "88058-3 - Respiratory measurements Document 9288-2 - Respiratory rate 12 hour 9286-6 - Respiratory rate 8 hour"
+  },
+  {
+    "observation_id": "393622d1-694e-a4de-868d-f944e5caf646",
+    "original_loinc_code": "XXXX-INVALID",
+    "original_display": "Respiratory System",
+    "value": 13,
+    "unit": "/min",
+    "ucum_code": "/min",
+    "effective_datetime": "1987-08-04T16:01:52+05:30",
+    "raw_observation": {
+      "resourceType": "Observation",
+      "id": "393622d1-694e-a4de-868d-f944e5caf646",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-respiratory-rate"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital signs"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "XXXX-INVALID",
+            "display": "Respiratory System"
+          }
+        ],
+        "text": "Respiratory rate"
+      },
+      "subject": {
+        "reference": "Patient/393622d1-694e-a4de-bd9d-83101ee4454b"
+      },
+      "encounter": {
+        "reference": "Encounter/393622d1-694e-a4de-d0f0-cce9addf35da"
+      },
+      "effectiveDateTime": "1987-08-04T16:01:52+05:30",
+      "issued": "1987-08-04T16:01:52.924+05:30",
+      "valueQuantity": {
+        "value": 13,
+        "unit": "/min",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    "recommended_loinc": "88058-3",
+    "confidence_score": 0.695,
+    "enhancement_required": true,
+    "loinc_candidates": [
+      {
+        "score": 0.4452371895313263,
+        "loinc_num": "88058-3",
+        "long_common_name": "Respiratory measurements Document",
+        "system": "^Patient",
+        "component": "Respiratory measurements"
+      },
+      {
+        "score": 0.4552723169326782,
+        "loinc_num": "9288-2",
+        "long_common_name": "Respiratory rate 12 hour",
+        "system": "Respiratory system",
+        "component": "Breaths"
+      },
+      {
+        "score": 0.47342628240585327,
+        "loinc_num": "9286-6",
+        "long_common_name": "Respiratory rate 8 hour",
+        "system": "Respiratory system",
+        "component": "Breaths"
+      }
+    ],
+    "llm_explanation": "88058-3 - Respiratory measurements Document 9288-2 - Respiratory rate 12 hour 9286-6 - Respiratory rate 8 hour"
   }
 ]

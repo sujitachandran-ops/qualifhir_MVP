@@ -39,7 +39,7 @@ for obs in sample:
         obs["code"]["coding"][0]["display"] = "Blood sugar level"
     elif "respiratory" in display:
         obs["code"]["coding"][0]["code"] = "XXXX-INVALID"
-        obs["code"]["coding"][0]["display"] = "Respiratory System"
+    #    obs["code"]["coding"][0]["display"] = "Respiratory System"
 
 # Write NDJSON
 with open(OUTPUT, "w", encoding="utf-8") as f:
