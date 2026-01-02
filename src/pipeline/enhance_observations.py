@@ -2,6 +2,7 @@ from src.vector.search import search_loinc
 from src.llm.open_source_llm import generate_answer
 from src.rules.confidence import calculate_confidence
 from src.rules.loinc_validation import is_valid_loinc
+from src.rules.semantic_filter import filter_by_semantics
 
 def enhance_observation(obs: dict) -> dict:
     enhanced = obs.copy()
@@ -28,7 +29,20 @@ def enhance_observation(obs: dict) -> dict:
     Value: {obs.get('value')} {unit}
     """
 
-    loinc_candidates = search_loinc(query, top_k=3)
+    #loinc_candidates = search_loinc(query, top_k=3)
+    loinc_candidates = search_loinc(query, top_k=10)
+    loinc_candidates = filter_by_semantics(
+        loinc_candidates,
+        obs.get("original_display"),
+        unit
+    )
+    
+    loinc_candidates = sorted(
+    loinc_candidates,
+    key=lambda x: x["score"]
+    )
+
+
 
     explanation = generate_answer(obs, loinc_candidates)
 

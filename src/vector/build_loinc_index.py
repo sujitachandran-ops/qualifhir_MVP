@@ -38,7 +38,10 @@ def build_loinc_index():
 
     # 🔹 Build embedding documents
     documents = (
-        df["LONG_COMMON_NAME"] + " (" + df["LOINC_NUM"] + ")"
+    "LOINC: " + df["LOINC_NUM"] +
+    " | Name: " + df["LONG_COMMON_NAME"] +
+    " | Component: " + df["COMPONENT"] +
+    " | System: " + df["SYSTEM"]
     ).tolist()
 
     print("Loading embedding model...")

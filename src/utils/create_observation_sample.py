@@ -31,15 +31,16 @@ sample = (
     random.sample(respiratory, min(4, len(respiratory)))
 )
 
-# 🔥 INTENTIONALLY BREAK some glucose records
+# 🔥 INTENTIONALLY BREAK records (ONLY code, keep display untouched)
 for obs in sample:
     display = obs.get("code", {}).get("coding", [{}])[0].get("display", "").lower()
-    if "glucose" in display:
+
+    # ❌ Glucose logic commented 
+    # if "glucose" in display:
+    #     obs["code"]["coding"][0]["code"] = "XXXX-INVALID"
+
+    if "respiratory" in display:
         obs["code"]["coding"][0]["code"] = "XXXX-INVALID"
-        obs["code"]["coding"][0]["display"] = "Blood sugar level"
-    elif "respiratory" in display:
-        obs["code"]["coding"][0]["code"] = "XXXX-INVALID"
-    #    obs["code"]["coding"][0]["display"] = "Respiratory System"
 
 # Write NDJSON
 with open(OUTPUT, "w", encoding="utf-8") as f:
