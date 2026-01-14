@@ -119,6 +119,68 @@ No assumptions are made.
 
 ---
 
+## 🟢 Step 1.2: Vector File Creation (Embedding Index)
+
+Before any semantic matching occurs, QualiFHIR prepares a **vector representation of reference vocabularies** (e.g., LOINC).
+
+### 🔹 Source Data
+Structured reference files such as:
+- LOINC Json
+
+Each record typically contains:
+- Code (e.g., LOINC number)
+- Long common name
+- Component
+- System
+- Other descriptive attributes
+
+---
+
+### 🔹 Document Construction
+
+Structured fields are converted into **natural-language documents** by concatenating key attributes.
+
+Example format:
+```text
+LOINC: <code> | Name: <long_common_name> | Component: <component> | System: <system>
+```
+
+This preserves **clinical context** and relationships between fields.
+
+---
+
+### 🔹 Embedding Generation
+
+Each document is passed through a **sentence embedding model** (e.g., `all-MiniLM-L6-v2`) to generate a **dense numerical vector**.
+
+Key properties:
+- Fixed-length vector (384 dimensions)
+- Encodes semantic meaning
+- Similar concepts → closer vectors
+
+---
+
+### 🔹 Vector Index Storage
+
+Generated vectors are stored in a **vector index** (e.g., FAISS / Chroma) along with metadata:
+- Code
+- Display name
+- Component
+- System
+
+---
+
+### 🔹 Outcome
+
+At the end of this step:
+- Reference vocabularies are vectorized
+- Semantic similarity search is enabled
+- No patient data is embedded
+
+This step is executed **once per vocabulary version** and reused across pipelines.
+
+---
+
 ## 🟢 Step 2: ETL – Extract & Structure
 
 **Purpose:**  
