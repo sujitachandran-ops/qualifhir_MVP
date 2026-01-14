@@ -30,7 +30,7 @@ def enhance_observation(obs: dict) -> dict:
     """
 
     #loinc_candidates = search_loinc(query, top_k=3)
-    loinc_candidates = search_loinc(query, top_k=10)
+    loinc_candidates = search_loinc(query, top_k=3)
     loinc_candidates = filter_by_semantics(
         loinc_candidates,
         obs.get("original_display"),
