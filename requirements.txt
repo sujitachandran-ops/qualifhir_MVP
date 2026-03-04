@@ -16,3 +16,7 @@ sentence-transformers
 transformers
 torch
 accelerate
+
+# For pretty-printing in terminal
+colorama
+tabulate
