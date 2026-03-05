@@ -1,7 +1,7 @@
 import json
 from src.etl.clean_observation import parse_observation
 from src.pipeline.enhance_observations import enhance_observation
-from src.display.pretty_print_observations import main as pretty_print_observations_main
+from main.llm_pipeline import main as pretty_print_observations_main
 
 INPUT = "resources/fhir_raw/Observation_sample.ndjson"
 OUTPUT = "outputs/enhanced_observations_sample.json"

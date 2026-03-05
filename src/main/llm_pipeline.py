@@ -214,17 +214,17 @@ def main(file: str | None = None) -> int:
     the default `outputs/enhanced_observations_sample.json` will be used.
     """
     # Simulate agentic processing with server communication
-    print(Style.DIM + Fore.CYAN + "🔄 Agent: Initializing connection to central knowledge server..." + Style.RESET_ALL)
-    for i in range(10):
+    print(Style.DIM + Fore.CYAN + "🔄 Initializing agentic pathway..." + Style.RESET_ALL)
+    for i in range(30):
         time.sleep(1)
         if i == 2:
-            print(Style.DIM + Fore.CYAN + "   ✓ Connected to LOINC validation service" + Style.RESET_ALL)
-        elif i == 5:
+            print(Style.DIM + Fore.CYAN + "   ✓ Connecting to LOINC.org" + Style.RESET_ALL)
+        elif i == 20:
             print(Style.DIM + Fore.CYAN + "   ✓ Querying semantic vector database" + Style.RESET_ALL)
-        elif i == 8:
-            print(Style.DIM + Fore.CYAN + "   ✓ Retrieving confidence metrics from central registry" + Style.RESET_ALL)
-    print(Style.DIM + Fore.CYAN + "✅ Agent: Ready to process observations\n" + Style.RESET_ALL)
-    
+        elif i == 25:
+            print(Style.DIM + Fore.CYAN + "   ✓ Retrieving confidence score" + Style.RESET_ALL)
+    print(Style.DIM + Fore.CYAN + "✅ Retrieving final candidate based on the closest co-ordinates\n" + Style.RESET_ALL)
+    time.sleep(10)  # Simulate some processing delay before showing results
     if not file:
         file = "outputs/enhanced_observations_sample.json"
     try:
