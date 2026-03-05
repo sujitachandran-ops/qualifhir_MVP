@@ -1,16 +1,9 @@
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 MODEL_NAME = "google/flan-t5-base"
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
-
-generator = pipeline(
-    "text2text-generation",
-    model=model,
-    tokenizer=tokenizer,
-    max_new_tokens=256
-)
 
 MAX_INPUT_TOKENS = 480  # leave buffer for safety
 
@@ -34,7 +27,7 @@ Task:
 Select the best LOINC code and explain briefly.
 """
 
-    # 🔴 HARD TOKEN TRUNCATION (THIS STOPS THE WARNING)
+    # Tokenize with truncation
     tokens = tokenizer(
         prompt,
         truncation=True,
@@ -42,9 +35,11 @@ Select the best LOINC code and explain briefly.
         return_tensors="pt"
     )
 
-    truncated_prompt = tokenizer.decode(
-        tokens["input_ids"][0],
-        skip_special_tokens=True
+    # Generate with model
+    output_ids = model.generate(
+        tokens["input_ids"],
+        max_new_tokens=256,
+        num_beams=1
     )
 
-    return generator(truncated_prompt)[0]["generated_text"]
+    return tokenizer.decode(output_ids[0], skip_special_tokens=True)
