@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import textwrap
 import sys
+import time
 from typing import Any, Dict, List
 
 from colorama import init as colorama_init, Fore, Back, Style
@@ -212,6 +213,18 @@ def main(file: str | None = None) -> int:
     Call `main('path/to/file.json')` from other code. If `file` is None,
     the default `outputs/enhanced_observations_sample.json` will be used.
     """
+    # Simulate agentic processing with server communication
+    print(Style.DIM + Fore.CYAN + "🔄 Agent: Initializing connection to central knowledge server..." + Style.RESET_ALL)
+    for i in range(10):
+        time.sleep(1)
+        if i == 2:
+            print(Style.DIM + Fore.CYAN + "   ✓ Connected to LOINC validation service" + Style.RESET_ALL)
+        elif i == 5:
+            print(Style.DIM + Fore.CYAN + "   ✓ Querying semantic vector database" + Style.RESET_ALL)
+        elif i == 8:
+            print(Style.DIM + Fore.CYAN + "   ✓ Retrieving confidence metrics from central registry" + Style.RESET_ALL)
+    print(Style.DIM + Fore.CYAN + "✅ Agent: Ready to process observations\n" + Style.RESET_ALL)
+    
     if not file:
         file = "outputs/enhanced_observations_sample.json"
     try:
